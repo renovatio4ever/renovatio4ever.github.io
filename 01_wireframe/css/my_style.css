@@ -1,0 +1,224 @@
+/**
+ * First HTML Assignment Index Page CSS-File
+ * Order: 1 (index, portfolio, contact form)
+ * Auth: Peter Santiago
+ * Last Updated: 09.18.2018
+ **/
+
+/* general index page parameters */
+
+h {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+p {
+  align-content: center;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+/* body container */
+
+body {
+  background-image: url('http://i65.tinypic.com/v6ivrm.png');
+  background-repeat: repeat;
+  background-color: #fff;
+  height: 50px;
+  text-decoration-color: #777777;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.blended_grid {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  margin: 0px auto 0 auto;
+}
+
+/* main header bar parameters */
+
+.s_h_container {
+  position: fixed;
+  background-color: rgb(255, 255, 255);
+  float: left;
+  clear: none;
+  height: 75px;
+  width: 100%;
+  z-index: 100;
+  border-style: solid;
+  border-top:  none;
+  border-width: 2px;
+  border-color: #cccccc;
+}
+
+.s_h_c {
+  background-color: rgba(255, 255, 255, 0);
+  position: fixed;
+  float: left;
+  clear: none;
+  height: 75px;
+  width: 960px;
+  top: 37px;
+  margin: 0;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  /* border-style: solid; */
+  border-width: 2px;
+  border-color: #ffffff;
+}
+
+/* main header bar parameters: My name */
+
+.box-1 {
+  display: inline-block;
+  width: 250px;
+  height: 76px;
+  background-color: #4aaaa5;
+}
+
+.box-1 p {
+  color: #f1e8e8;
+  margin: 0;
+  position: relative;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 36px;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* main header bar parameters: interactive menu */
+
+.box-2 {
+  display: inline-block;
+  float: right;
+  width: 710px;
+  height: 74px;
+  background-color: #ffffff;
+  border-style: none;
+}
+
+/* main container parameters */
+
+.c_container {
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  height: 550px;
+  width: 910px;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 2px;
+  border-color: #dddddd;
+  padding: 25px;
+  line-height: 1.8;
+  /* overflow: scroll; */
+  }
+
+.c_container_contact {
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  height: 550px;
+  width: 910px;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 2px;
+  border-color: #dddddd;
+  padding: 25px;
+  line-height: 1.8;
+}
+
+.c_name {
+  color: #4aaaa5;
+  text-decoration-color: #4aaaa5;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 32px;
+}
+
+/* footer parameters */
+
+.f_body {
+  background-color: #666666;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  float: left;
+  clear: none;
+  height: 50px;
+  width: 100%;
+}
+
+
+.f_body p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #ebe2e2;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.f_trim {
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background-color: #4aaaa5;
+}
+
+/* interactive menu settings */
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  float: left;
+  width: 710px;
+  height: 74px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+li {
+  float: right;
+
+}
+
+li a {
+  display: block;
+  color: rgb(31, 26, 26);
+  text-align: center;
+  padding: 29px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #4db9eb;
+}
+
+/* general image parameters */
+
+img {
+  float: left;
+  margin:15px 15px 15px 15px ;
+  border: 10px solid white;
+  border-radius: 2px;
+  padding: 5px 5px 5px 5px;
+  width: 150px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
