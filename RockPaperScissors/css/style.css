@@ -1,15 +1,18 @@
 body {
-    background-image: url('http://i65.tinypic.com/v6ivrm.png');
-    background-repeat: repeat;
+    /* background-image: url('http://i65.tinypic.com/v6ivrm.png'); */
+    background-image: url('http://i68.tinypic.com/25i2q6o.jpg');
+    background-repeat: no-repeat;
+    /* background-repeat: repeat; */
     background-color: #fff;
-    height: 50px;
+    background-size: 1920px 1200px;
+    /* height: 750px;
+    width: 1200px; */
     background-color: white;
     color: #dbc8c8;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 16px;
     font-size: 1.6rem;
 }
-
 .main {
     background-color: white;
 }
