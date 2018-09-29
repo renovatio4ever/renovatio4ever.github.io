@@ -1,0 +1,209 @@
+/**
+ * Second HTML Assignment - Bootstrapping
+ * Order: 1 (index, portfolio, contact form)
+ * Auth: Peter Santiago
+ * Last Updated: 09.29.2018
+ **/
+
+/* Standard font family for body */
+
+h {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  p {
+    align-content: center;
+  }
+  
+/* Principle container margins */
+
+  * {
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+  
+  /* Body parameters with image */
+
+  body {
+    background-image: url('http://i65.tinypic.com/v6ivrm.png');
+    background-repeat: repeat;
+    background-color: #fff;
+    height: 50px;
+    text-decoration-color: #777777;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  /* body container */
+  
+ .container
+  {
+      padding: 3px 3px 3px 3px;
+  }
+
+/* Menu wrapper */
+
+.menu_wrapper {
+    padding: 5px 5px 20px 5px;
+    width: 100%;
+    background-color: #ebe2e2;
+}
+
+.jumbo_wrapper {
+    padding: 20px 20px 20px 20px;
+}
+
+/* Modified Jumbotron */
+
+  .jumbotron {
+    margin-top: 75px;
+    margin-bottom:25px;
+    background-color: #ebe2e2;
+    border: solid 2px rgb(104, 92, 92);
+  }
+
+  /* Defalt image class. Next iteration will levarage divs with backgrounds instead for ease of manipulation */
+   
+  img {
+    float: left;
+    margin:15px 15px 15px 15px ;
+    border: 10px solid white;
+    border-radius: 2px;
+    padding: 5px 5px 5px 5px;
+    width: 150px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .c_name {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 35px;
+      
+  }
+
+  /* Sticky footer parameters */
+
+  .f_body {
+    background-color: #666666;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    float: left;
+    clear: none;
+    height: 50px;
+    width: 100%;
+  }
+  
+  
+  .f_body p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #ebe2e2;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .f_trim {
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    background-color: #4aaaa5;
+  }
+
+  .tg {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.tg td {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    padding: 5px 5px;
+    border-style: none;
+    border-width: 1px;
+    overflow: hidden;
+    word-break: normal;
+    border-color: black;
+    padding-right: 10px;
+}
+
+.tg th {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 5px 5px;
+    border-style: none;
+    border-width: 1px;
+    overflow: hidden;
+    word-break: normal;
+    border-color: black;
+}
+
+.tg .tg-0pky {
+    border-color: inherit;
+    text-align: left;
+    vertical-align: top
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgb(173, 167, 167);
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+/* submit button and effects */
+
+input[type=submit] {
+    background-color:#4aaaa5;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #403e53;
+} */
+
+.p_divider{
+color: white;
+}
+
+  /* Media effects if the size of the browser is altered */
+  
+  @media only screen and (max-width: 850px) {
+    .tg-0pky3 {display: none;}  
+    p {font-size: 10px;}  
+    .c_name {font-size: 20px;}
+    img {width: 80px;}
+  }
+
+  @media only screen and (max-width: 750px) {
+    .tg-0pky5 {display: none;}    
+    .tg-0pky2 {display: none;}    
+  }
+
+  
+  @media only screen and (max-width: 300px) {
+    .tg-0pky1 {display: none;}    
+    .tg-0pky4 {display: none;}    
+  }
+
+  @media only screen and (max-width: 630px) {
+    .p_divider {display: none;}    
+  }
+  
+/*   
+  @media only screen and (max-height: 766px) {
+    
+  }
+    */
+  

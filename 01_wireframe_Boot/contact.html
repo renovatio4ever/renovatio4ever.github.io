@@ -1,0 +1,107 @@
+<!--Peter Santiago 09.29.2018 Biography REDUX leveraging Bootstrap -->
+<!DOCTYPE html>
+<html>
+
+<!--Standard Meta Tags-->
+
+<head>
+    <title>Peter Santiago - Biography</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/boot_style.css">
+
+    <!-- Bootstrap Content -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+
+    <!--Parent wrapper or container -->
+
+    <div class="container">
+
+        <!-- Sticky Menu Bar -->
+
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="index.html">Peter Santiago</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact<span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+
+        <!-- Borrowed Jumbo Tron -->
+
+        <div class="jumbo_wrapper">
+            <div class="jumbotron">
+
+                    <div class="c_container_contact">
+
+                            <div class="c_name">Contact</div>
+                    
+                            <p>&nbsp;</p>
+                            <div class="p_divider" style="border: 50px; width:400px; height:1px; background-color:#000">
+                            </div>
+                            <p>&nbsp;</p>
+                    
+                            <!-- site form input fields. Note: form redirects back to contact since there is nothing to process via js ..yet.. -->
+                    
+                            <div class="container">
+                                <form action="contact.html">
+                                  <label for="fname">Name</label>
+                                  <input type="text" id="fname" name="firstname" placeholder="John Smith">
+                              
+                                  <label for="lname">Email</label>
+                                  <input type="text" id="lname" name="lastname" placeholder="example@gmail.com">
+                                            
+                                  <label for="subject">Message</label>
+                                  <textarea id="subject" name="subject" placeholder="" style="height:100px"></textarea>
+                              
+                                  <input type="submit" value="Submit">
+                                </form>
+                              </div>
+                    
+                        </div>
+
+
+               
+            </div>
+        </div>
+
+        <!-- Sticky footer -->
+
+        <div class="f_body">
+            <p>Copyright &copy</p>
+            <div class="f_trim">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bottom of site -->
+
+
+
+</body>
+
+</html>
