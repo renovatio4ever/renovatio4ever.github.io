@@ -1,6 +1,6 @@
 # Final Fantasy RPG Card Game
 
-A jQuery "War" card game style Star-Wars themed RPG. 
+A jQuery Final Fantasy themed RPG card game.
 
 ## Game Play
 
@@ -20,4 +20,4 @@ All images, and sounds are trademarks of Square Enix and are used solely for edu
 
 [https://renovatio4ever.github.io/RPGGame/](https://renovatio4ever.github.io/RPGGame/)
 
-[![Star-Wars RPG Screenshot](https://s9.postimg.cc/nvm13ibvz/Screenshot_2018-05-20_Star_Wars_RPG.png)](https://renovatio4ever.github.io/RPGGame/)
+[![Final Fantasy RPG Theme Game SS](http://i68.tinypic.com/2rwaumg.jpg)](https://renovatio4ever.github.io/RPGGame/)
