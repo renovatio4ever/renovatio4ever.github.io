@@ -222,7 +222,7 @@ $(document).on("click", "#attackBtn", function () {
             }
             if (!isAlive(player)) {
                 $("#playerHealthDiv").html("DEFEATED!");
-                $("#msg").html("The light has faded, try again...");
+                $("#msg").html("You are <b>DEFEATED!!</b>, and your soul returns to the Crystal. Press the button to respawn anew, warrior!...");
                 $("#attackBtn").html("Restart Game");
                 $(document).on("click", "#attackBtn", function () { // restarts game
                     location.reload();
