@@ -43,7 +43,7 @@ Character.prototype.increaseAttack = function () {
 Character.prototype.attack = function (Obj) {
     Obj.healthpoints -= this.attackpower;
     $("#msg").html("You attacked " +
-        Obj.name + "for " + this.attackpower + " damage points.");
+        Obj.name + " for " + this.attackpower + " damage points.");
     this.increaseAttack();
 };
 
@@ -163,7 +163,7 @@ $(document).on("click", "img", function () {
                 opponent = chararray[j]; // sets opponent
                 chararray.splice(j, 1);
                 selectedopponent = true;
-                $("#msg").html("Click the button to attack!");
+                $("#msg").html("Click the attack button!");
             }
         }
         $("#defenderDiv").append(this); // appends the selected opponent to the div 
