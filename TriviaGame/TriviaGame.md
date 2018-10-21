@@ -1,6 +1,6 @@
-# Final Fantasy RPG Card Game
+# Video Game Trivia
 
-A jQuery Final Fantasy themed RPG card game.
+A jQuery Ready Player One themed Trivia Game.
 
 ## Game Play
 
