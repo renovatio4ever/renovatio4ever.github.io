@@ -42,6 +42,30 @@ $(document).ready(function () {
             choice: ["1979", "1999", "1981", "1985"],
             answer: 0,
             photo: "assets/images/maxheadroom.gif"
+        },
+        {
+            question: "What President enjoyed playing video games?",
+            choice: ["George Bush", "Barack Obama", "Donald Trump", "Ronald Reagan"],
+            answer: 1,
+            photo: "assets/images/barack.gif"
+        },
+        {
+            question: "What is the most popular late night gamer drink?",
+            choice: ["Tea", "Coffee", "Orange Juice", "Mountain Dew"],
+            answer: 0,
+            photo: "assets/images/tea.gif"
+        },
+        {
+            question: "What video game clocked over 200 hours playing time?",
+            choice: ["Grand Theft Auto V", "Final Fantasy XII", "Just Cause 2", "Thief III"],
+            answer: 1,
+            photo: "assets/images/ff12.gif"
+        },
+        {
+            question: "What was the best selling console in history to date?",
+            choice: ["Atari 2600", "Nintendo WII", "Super NES", "Playstation 2"],
+            answer: 3,
+            photo: "assets/images/ps2.gif"
         }
     ];
 
