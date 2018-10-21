@@ -89,21 +89,12 @@ h2, h4 {
   overflow-y: auto;
 }
 
-
-/* .modal-body {
-  color: black;
-  height: 550px;
-  overflow-y: scroll;
-} */
-
 .modal-header {
   color: #fff;
   padding: 9px 15px;
   border-bottom: 1px solid #eee;
   background-color: #2d689e;
 }
-
-/* You tube embed. Yeah - iframe for this to achieve that maximum display coverage */
 
 * {
   box-sizing: border-box;
