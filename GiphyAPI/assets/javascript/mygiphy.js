@@ -54,7 +54,10 @@ $( document ).ready(function() {
     
     function displayGifs(){
         var action = $(this).attr("data-name");
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + action + "&api_key=461iE0tNG94oBHTW9Hfby7wS0DCp2obb&limit=10";
+        // var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + action + "&api_key=461iE0tNG94oBHTW9Hfby7wS0DCp2obb&limit=10";
+
+        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=461iE0tNG94oBHTW9Hfby7wS0DCp2obb&q=" +action + "&limit=10&offset=0&rating=G&lang=en";
+
         console.log(queryURL); 
         $.ajax({
             url: queryURL,
