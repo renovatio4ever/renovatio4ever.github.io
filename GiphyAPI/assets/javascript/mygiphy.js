@@ -15,7 +15,7 @@ $( document ).ready(function() {
         $("#gifButtonsView").empty(); 
         for (var i = 0; i < imagebank.length; i++){
             var gifButton = $("<button>");
-            gifButton.addClass("action");
+            gifButton.addClass("mysearchquery");
             gifButton.addClass("btn btn-primary")
             gifButton.attr("data-name", imagebank[i]);
             gifButton.text(imagebank[i]);
@@ -27,11 +27,11 @@ $( document ).ready(function() {
     
     function addNewButton(){
         $("#addGif").on("click", function(){
-        var action = $("#topic-input").val().trim();
-        if (action == ""){
+        var mysearchquery = $("#topic-input").val().trim();
+        if (mysearchquery == ""){
           return false; 
         }
-        imagebank.push(action);
+        imagebank.push(mysearchquery);
     
         displayGifButtons();
         return false;
@@ -42,7 +42,7 @@ $( document ).ready(function() {
 
     function removeLastButton(){
         $("removeGif").on("click", function(){
-        imagebank.pop(action);
+        imagebank.pop(mysearchquery);
         displayGifButtons();
         return false;
         });
@@ -53,10 +53,10 @@ $( document ).ready(function() {
     // Free DEV Key: 461iE0tNG94oBHTW9Hfby7wS0DCp2obb
     
     function displayGifs(){
-        var action = $(this).attr("data-name");
-        // var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + action + "&api_key=461iE0tNG94oBHTW9Hfby7wS0DCp2obb&limit=10";
+        var mysearchquery = $(this).attr("data-name");
+        // var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + mysearchquery + "&api_key=461iE0tNG94oBHTW9Hfby7wS0DCp2obb&limit=10";
 
-        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=461iE0tNG94oBHTW9Hfby7wS0DCp2obb&q=" +action + "&limit=10&offset=0&rating=G&lang=en";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=461iE0tNG94oBHTW9Hfby7wS0DCp2obb&q=" + mysearchquery + "&limit=10&offset=0&rating=G&lang=en";
 
         console.log(queryURL); 
         $.ajax({
@@ -95,7 +95,7 @@ $( document ).ready(function() {
 
     // gif animation functions
     
-    $(document).on("click", ".action", displayGifs);
+    $(document).on("click", ".mysearchquery", displayGifs);
     $(document).on("click", ".image", function(){
         var state = $(this).attr('data-state');
         if ( state == 'still'){
