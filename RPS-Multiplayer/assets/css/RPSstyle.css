@@ -1,0 +1,172 @@
+/* Author: Peter Santiago
+Date: 11.02.2018
+Purpose: Rock, Paper, Scissors Game II 
+Features: This code was built on JS, HTML, HTML5, CSS, Fireshare, and Bootstrap */
+
+/* General or Universal Style. The background is light so text needs to pop */
+
+body {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: auto;
+	background-color: #eeeeee;
+	background-image: url("../images/background_image0.jpg");
+	text-shadow:
+		2px 3px 0 rgb(22, 22, 22),
+		-1px -1px 0 rgb(22, 22, 22),
+		1px -1px 0 rgb(73, 22, 22),
+		-1px 1px 0 rgb(22, 22, 22),
+		1px 1px 0 rgb(22, 22, 22)
+}
+
+h1 {
+	font-size: 48px;
+	font-weight: bolder;
+}
+
+.panel-default {
+	width: 50%;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	background-color: #3333ff;
+}
+
+.panel-body {
+	text-align: center;
+}
+
+.stats {
+	text-align: center;
+}
+
+.aRight {
+	text-align: right;
+}
+
+.aLeft {
+	text-align: left;
+}
+
+#bottomDiv {
+	position: fixed;
+	bottom: 0px;
+	left: 0%;
+}
+
+#header {
+	margin-bottom: 25px;
+	color: #dd5252;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+#heightBar {
+	height: 250px;
+}
+
+#playerIntro,
+#turnStatus {
+	text-align: center;
+}
+
+#chatTextArea {
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+	text-shadow: none;
+}
+
+.modal-body {
+	max-height: calc(100vh - 210px);
+	overflow-y: auto;
+	font-size: 16px;
+	font-weight: normal;
+	color: #000000;
+	text-shadow: none;
+}
+
+/* Modal Style */
+
+.modal-title {
+	color: #fff;
+	padding: 9px 15px;
+	border-bottom: 1px solid #eee;
+	background-color: #9a979b;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+/* Background Daisy Chain. I'll call these in to change the player background with each turn */
+.bg0 {
+	background-image: url("../images/background_image0.jpg");
+}
+
+.bg1 {
+	background-image: url("../images/background_image1.jpg");
+}
+
+.bg2 {
+	background-image: url("../images/background_image2.jpg");
+}
+
+.bg3 {
+	background-image: url("../images/background_image3.jpg");
+}
+
+.bg4 {
+	background-image: url("../images/background_image4.jpg");
+}
+
+/* Player Form Style */
+#player1Name,
+#player2Name {
+	color: #377945;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+#player1LblWins {
+	color: #ec30ec;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+#player1LblWins,
+#player1LblLosses,
+#player2LblWins,
+#player2LblLosses {
+	color: #ec30ec;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+#gameStats {
+	color: #f1f50d;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+#p1c1,
+#p1c2,
+#p1c3,
+#p2c1,
+#p2c2,
+#p2c3 {
+	color: #04f8f8;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+#playerIntro {
+	color: #6a6cdb;
+	font-size: 30px;
+	font-weight: bold;
+}
