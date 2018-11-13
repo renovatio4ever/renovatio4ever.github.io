@@ -22,6 +22,7 @@ Features: This code was built on JS, HTML, HTML5, CSS, CSS, Bootstrap, Firebase 
 <!-- MODAL FARM  -->
 <!-- Contains guidance prompts for user processing (i.e. existing, new user, reminders.)  -->
 <!-- MODAL: New User  -->
+
 <div id="mymodal-register" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -149,7 +150,7 @@ Features: This code was built on JS, HTML, HTML5, CSS, CSS, Bootstrap, Firebase 
         <div class="nflb-team" id="hide-the-team">
             <div class="jumbotron">
                 <div class="nflbets-stats">
-                    <span class="bet-header">Select Your Teams: Max 6 Per Player</span>
+                    <span class="bet-header">Select 3 Teams</span>
                     <div class="bet-pot">
                         <span class="bet-pot-tokens">Earned NFL Tokens: </span>
                         <span class="bet-pot-amount">5000</span>
@@ -161,48 +162,15 @@ Features: This code was built on JS, HTML, HTML5, CSS, CSS, Bootstrap, Firebase 
                         <tr>
                             <th>#</th>
                             <th>Team</th>
-                            <th>Prev Stats</th>
+                            <th>Point Spread</th>
                             <th>Odds</th>
                             <th>Select</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="nflteams">
 
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Patriots</td>
-                            <td>7-2-0</td>
-                            <td id=odds-1>2</td>
-                            <td id=place-bets-1><button class="btn btn-primary my-2 my-sm-0" id="pick-team-1">Select</button></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Chiefs</td>
-                            <td>8-1-0</td>
-                            <td id=odds-1>2</td>
-                            <td id=place-bets-1><button class="btn btn-primary my-2 my-sm-0" id="pick-team-2">Select</button></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Steelers</td>
-                            <td>6-2-1</td>
-                            <td id=odds-1>2</td>
-                            <td id=place-bets-1><button class="btn btn-primary my-2 my-sm-0" id="pick-team-3">Select</button></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>Red Skins</td>
-                            <td>5-3-0</td>
-                            <td id=odds-1>2</td>
-                            <td id=place-bets-1><button class="btn btn-primary my-2 my-sm-0" id="pick-team-4">Select</button></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">5</th>
-                            <td>Rams</td>
-                            <td>8-1-0</td>
-                            <td id=odds-1>2</td>
-                            <td id=place-bets-1><button class="btn btn-primary my-2 my-sm-0" id="pick-team-5">Select</button></td>
-                        </tr>
+                        <!-- Adding a maximum of 5 teams from API  -->
+                    
 
                     </tbody>
                 </table>
@@ -246,19 +214,19 @@ Features: This code was built on JS, HTML, HTML5, CSS, CSS, Bootstrap, Firebase 
                             <th scope="row">1</th>
                             <td>Patriots</td>
                             <td>7-2-0</td>
-                            <td><input name="win[]" class="form-control col-xs-2 win" id="wins-1" value="0"></td>
-                            <td><input name="loss[]" class="form-control col-xs-2 loss" id="loss-1" value="0"></td>
-                            <td><input name="draw[]" class="form-control col-xs-2 draw" id="draw-1" value="0"></td>
-                            <td id="odds-1">4</td>
+                            <td><input name="win[]" class="form-control col-xs-2 win bt" id="wins-1" value="0"></td>
+                            <td><input name="loss[]" class="form-control col-xs-2 loss bt" id="loss-1" value="0"></td>
+                            <td><input name="draw[]" class="form-control col-xs-2 draw bt" id="draw-1" value="0"></td>
+                            <td id="odds-1">4</td> 
                             <td id="earn-1">0</td>
                         </tr>
                         <tr>
                             <th scope="row">2</th>
                             <td>Chiefs</td>
                             <td>8-1-0</td>
-                            <td><input name="win[]" class="form-control col-xs-2 win" id="wins-2" value="0"></td>
-                            <td><input name="loss[]" class="form-control col-xs-2 loss" id="loss-2" value="0"></td>
-                            <td><input name="draw[]" class="form-control col-xs-2 draw" id="draw-2" value="0"></td>
+                            <td><input name="win[]" class="form-control col-xs-2 win bt" id="wins-2" value="0"></td>
+                            <td><input name="loss[]" class="form-control col-xs-2 loss bt" id="loss-2" value="0"></td>
+                            <td><input name="draw[]" class="form-control col-xs-2 draw bt" id="draw-2" value="0"></td>
                             <td id="odds-2">2</td>
                             <td id="earn-2">0</td>
                         </tr>
@@ -266,9 +234,9 @@ Features: This code was built on JS, HTML, HTML5, CSS, CSS, Bootstrap, Firebase 
                             <th scope="row">3</th>
                             <td>Steelers</td>
                             <td>6-2-1</td>
-                            <td><input name="win[]" class="form-control col-xs-2 win" id="wins-3" value="0"></td>
-                            <td><input name="loss[]" class="form-control col-xs-2 loss" id="loss-3" value="0"></td>
-                            <td><input name="draw[]" class="form-control col-xs-2 draw" id="draw-3" value="0"></td>
+                            <td><input name="win[]" class="form-control col-xs-2 win bt" id="wins-3" value="0"></td>
+                            <td><input name="loss[]" class="form-control col-xs-2 loss bt" id="loss-3" value="0"></td>
+                            <td><input name="draw[]" class="form-control col-xs-2 draw bt" id="draw-3" value="0"></td>
                             <td id="odds-3">1</td>
                             <td id="earn-3">0</td>
                         </tr>
@@ -355,7 +323,7 @@ Features: This code was built on JS, HTML, HTML5, CSS, CSS, Bootstrap, Firebase 
 
         <!-- Script package-->
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js "></script>
         <script src="assets/javascript/simplemask.js"></script>

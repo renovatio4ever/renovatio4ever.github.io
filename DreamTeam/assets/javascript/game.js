@@ -1,4 +1,4 @@
-// Author: The Dream Team (Peter Santiago, Brenton Wyman, Ruben Galleguillos, Patrick Mirville)
+// Author: The Dream Team (Peter Santiago, Brenton Wyman, Ruben Galleguillos)
 // Updated: 11.01.2018
 // Purpose: Fantasy Football/Craps Betting Themed Game
 // Features: This code was built on JS, HTML, HTML5, CSS, CSS3, and Bootstrap
@@ -33,42 +33,70 @@ var team1earn, team2earn, team3earn;
 team1earn = team2earn = team3earn = 0;
 
 var totalbets = 0
-var totaltokens = 5000
+var totaltokens = 9000
 var tokensearned = 0
 var totalearnings = 0
 var betlocker = "false"
 var currentplayer
 var gameplayer
+var teamcounter = 0
+
+    
+function displaynflteams(){
+    
+        $.ajax({
+            type: "GET",
+            url: "https://api.fantasydata.net/v3/nfl/scores/JSON/GameStatsByWeek/2018/8?key=ad398993c55d46449bde67a4095fef1b",
+            dataType: "json"
+        })
+        .done(function(response) {
+            for (var i = 0; i < 5; i++) {
+            // index, Team, Point Spread, Odds (fixed), Select Button
+            console.log("Away Team: " + response[i].AwayTeam + " Away Score " + response[i].AwayScore + " Home Score " + response[i].HomeScore)
+            // $("#nflteams").append("<tr><th scope=row>" + i + "</th><td>" + response[i].HomeTeam + "</td><td>" + response[i].PointSpread + 
+            // "</td><td id=odds-" + i + "1>2</td><td id=place-bets-" + i + "><button class=btn btn-primary my-2 my-sm-0 pb id=pick-team-" + i + 
+            // ">Select</button></td></tr>")
+
+            $('#nflteams').append("<tr><th scope='row'>" + i + "</th><td>" + response[i].HomeTeam + 
+            "</td><td>" + response[i].PointSpread + "</td><td id='odds-" + i + "'>2</td><td id='place-bets-" + i + 
+            "'><button class='btn btn-primary my-2 my-sm-0 pb' id='pick-team-" + i + "'>Select</button></td></tr>")
+            }
+         })
+    }      
 
 
-
-// function setuser() {
-//     currentplayer = $("#new-player").text();
-//     // currentplayer = "Player9999"
-//     console.log(currentplayer);
-//     $("#playing-as").text(currentplayer);
-// }
-
-// setuser();
-
-// Test Harness: Initialization
-
-
+    function buildQueryURL() {
+        var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?";
+        var queryParams = { "api-key": "b9f91d369ff59547cd47b931d8cbc56b:0:74623931" };
+        queryParams.q = "NFL";
+        queryParams.begin_date = "20170101";
+        queryParams.end_date = "20180101";
+        return queryURL + $.param(queryParams);
+        }
+      function updatePage(NFLNews) {
+        var numArticles = 3
+      
+        for (var i = 0; i < numArticles; i++) {
+          var article = NFLNews.response.docs[i];
+          var headline = article.headline;
+          console.log(headline.main)
+          var headlinelink = article.web_url;
+          console.log(headlinelink)
+        }
+    }
+     
+        var queryURL = buildQueryURL();
+      
+        $.ajax({
+          url: queryURL,
+          method: "GET"
+        }).then(updatePage);
+     
 
 $(document).ready(function () {
 
-    // simplemask.js masking.. because fat fingering text will goof the generator.
-
-    $('#wins-1').simpleMask({'mask': ['###'],'nextInput': $('#loss-1')});
-    $('#loss-1').simpleMask({'mask': ['###'],'nextInput': $('#draw-1')});
-    $('#draw-1').simpleMask({'mask': ['###'],'nextInput': $('#wins-2')});
-    $('#wins-2').simpleMask({'mask': ['###'],'nextInput': $('#loss-2')});
-    $('#loss-2').simpleMask({'mask': ['###'],'nextInput': $('#draw-2')});
-    $('#draw-2').simpleMask({'mask': ['###'],'nextInput': $('#wins-3')});
-    $('#wins-3').simpleMask({'mask': ['###'],'nextInput': $('#loss-3')});
-    $('#loss-3').simpleMask({'mask': ['###'],'nextInput': $('#draw-3')});
-    $('#draw-3').simpleMask({'mask': ['###'],'nextInput': $('#wins-1')});
-
+    $('.bt').simpleMask({'mask': ['###']});
+    
 });
 
 function hidethestack() {
@@ -79,6 +107,8 @@ function hidethestack() {
 }
 
 hidethestack();
+displaynflteams();
+// displaynflnews();
 
 // Test Harness: Realtime Calculations and DB Write
 $('input').keyup(function () {
@@ -88,15 +118,6 @@ $('input').keyup(function () {
 
 // Test Harness: Interim Bet Engine
 function calcbets() {
-
-
-    // $("tr").each(function() {
-    //     if ($(this).find(".win")) {
-    //       team1earn = parseInt($(this).find(".win").val().trim())
-    //       team2earn = parseInt($(this).find(".loss").val().trim())
-    //       team3earn = parseInt($(this).find(".draw").val().trim())
-    //     }
-    //   })
     
     wins1 = $("#wins-1").val().trim();
     loss1 = $("#loss-1").val().trim();
@@ -162,14 +183,7 @@ $("#bet-this").click(function () {
 $("#pick-team-1").attr("disabled", true);
 
 $("#go-bet-now").click(function () {
-
-    // ref.child('dream-team-game').orderByChild('player').equalTo('superplayer2018').on("value", function(snapshot) {
-    //     console.log(snapshot.val());
-    //     snapshot.forEach(function(data) {
-    //         console.log(data.key);
-    //     });
-    // });
-
+ 
     $("#game-player").on("keyup change", function () {
         gameplayer = this.value;
     });
@@ -199,24 +213,17 @@ $("#go-to-champs").click(function () {
 });
 
 // Disable Button Count
-$("#pick-team-1").click(function () {
-    $("#pick-team-1").attr("disabled", true);
-});
 
-$("#pick-team-2").click(function () {
-    $("#pick-team-2").attr("disabled", true);
-});
-
-$("#pick-team-3").click(function () {
-    $("#pick-team-3").attr("disabled", true);
-});
-
-$("#pick-team-4").click(function () {
-    $("#pick-team-4").attr("disabled", true);
-});
-
-$("#pick-team-5").click(function () {
-    $("#pick-team-5").attr("disabled", true);
+$(".pb").click(function () {
+    $(this).attr("disabled", true);
+    teamcounter++
+    console.log("teamcounter " + teamcounter)
+    // if (teamcounter === 3){
+    //     $("#hide-the-welcome").hide();
+    //     $("#hide-the-team").hide();
+    //     $("#hide-the-bets").show();
+    //     $("#hide-the-champs").hide();
+    // }
 });
 
 // End Series
@@ -249,19 +256,3 @@ $("#go-back-home-now").click(function () {
     $("#hide-the-champs").hide();
 });
 
-function GenerateNFLTeams(){
-    
-    var queryURL = "http://api.sportradar.us/nfl/official/trial/v5/en/seasons/2018/standings.json?api_key=4qk5mjfh827kk5vgk4d98wbv";
-
-    console.log(queryURL); 
-    $.ajax({
-        url: queryURL,
-        method: 'GET'
-    })
-    .done(function(response) {
-        var results = response.data; 
-        for (var i=0; i<results.length; i++){
-
-        }
-    });
-}
