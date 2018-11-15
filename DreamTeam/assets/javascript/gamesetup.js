@@ -50,6 +50,7 @@ $(".pb").click(function () {
 
 // End Series
 $("#go-back-to-teams").click(function () {
+    $("#hide-the-news").hide();
     $("#hide-the-welcome").hide();
     $("#hide-the-team").show();
     $("#hide-the-bets").hide();
@@ -57,6 +58,7 @@ $("#go-back-to-teams").click(function () {
 });
 
 $("#go-to-bet-board").click(function () {
+    $("#hide-the-news").hide();
     $("#hide-the-welcome").hide();
     $("#hide-the-team").hide();
     $("#hide-the-bets").show();
@@ -65,6 +67,7 @@ $("#go-to-bet-board").click(function () {
 
 
 $("#go-to-home").click(function () {
+    $("#hide-the-news").hide();
     $("#hide-the-welcome").show();
     $("#hide-the-team").hide();
     $("#hide-the-bets").hide();
@@ -72,6 +75,7 @@ $("#go-to-home").click(function () {
 });
 
 $("#go-back-home-now").click(function () {
+    $("#hide-the-news").hide();
     $("#hide-the-welcome").show();
     $("#hide-the-team").hide();
     $("#hide-the-bets").hide();
@@ -93,3 +97,12 @@ function takemetothenews() {
     $("#hide-the-bets").hide();
     $("#hide-the-champs").hide();
 };
+
+$("#go-to-champs").click(function () {
+    $("#hide-the-welcome").hide();
+    $("#hide-the-team").hide();
+    $("#hide-the-bets").hide();
+    $("#hide-the-champs").show();
+    $("#hide-the-news").hide();
+    listthechamps();
+});

@@ -54,7 +54,7 @@ function displaynflteams() {
             dataType: "json"
         })
         .done(function (response) {
-            for (var i = 0; i < 5; i++) {
+            for (var i = 0; i < 10; i++) {
 
                 //Use API to build each candidate "Team" Record
                 $('#nflteams').append("<tr><th scope='row'>" + i + "</th><td>" + response[i].HomeTeam +
@@ -88,7 +88,7 @@ $('.teams').on('click', function () {
     }
 
     function updatePage(NFLNews) {
-        var numArticles = 3
+        var numArticles = 6
 
         for (var i = 0; i < numArticles; i++) {
             var article = NFLNews.response.docs[i];
@@ -189,26 +189,30 @@ $("#go-bet-now").click(function () {
     $("#hide-the-team").show();
     $("#hide-the-bets").hide();
     $("#hide-the-champs").hide();
+    $("#hide-the-news").hide();
 
-});
-
-$("#go-to-champs").click(function () {
-    $("#hide-the-welcome").hide();
-    $("#hide-the-team").hide();
-    $("#hide-the-bets").hide();
-    $("#hide-the-champs").show();
-    listthechamps();
 });
 
 function listthechamps() {
 
+    let y = 0
+    $("#tableChampion").empty();
 
-    // dataRef.child('player').orderByKey().limitToLast(10).on('child_added', function(snapshot) {
-    dataRef.ref().orderByChild("player").limitToFirst(10).on("child_added", function (snapshot) {
-        // Change the HTML to reflect
-
-        console.log(snapshot.val().player);
-
+    var database = firebase.database();
+    database.ref().once('value', function(snapshot){
+         if(snapshot.exists()){
+            var content = '';
+            snapshot.forEach(function(data){
+                y++
+                var val = data.val();
+                content +='<tr>';
+                content += '<td>' + y + '</td>';
+                content += '<td>' + val.player + '</td>';
+                content += '<td>' + val.t_earnings + '</td>';
+                content += '<td>' + val.t_token + '</td>';
+                content += '</tr>';
+            });
+            $('#tableChampion').append(content);
+        }
     });
-
 }

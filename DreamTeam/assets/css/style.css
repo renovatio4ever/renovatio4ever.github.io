@@ -105,3 +105,8 @@ color: rgb(29, 52, 95);
   padding-left: 1px;
   padding-right: 1px;
 }
+
+#tableBody, #tablePreview, #tableNews, #teamlonglist {
+  height:200px;
+  overflow: auto;
+}

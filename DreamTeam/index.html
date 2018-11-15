@@ -194,15 +194,17 @@ Features: This code was built on JS, HTML, HTML5, CSS, CSS, Bootstrap, Firebase 
 
         <div class="nflb-team" id="hide-the-team">
             <div class="jumbotron">
+                <div id="teamlonglist">
                 <div class="nflbets-stats">
                     <span class="bet-header">Select 3 Teams</span>
                     <div class="bet-pot">
                         <span class="bet-pot-tokens">Earned NFL Tokens: </span>
                         <span class="bet-pot-amount">5000</span>
                     </div>
+                    
                 </div>
-
-                <table id="tablePreview" class="table table-hover table-sm">
+                
+                <table id="previewteams" class="table table-hover table-sm">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -212,18 +214,22 @@ Features: This code was built on JS, HTML, HTML5, CSS, CSS, Bootstrap, Firebase 
                             <th>Select</th>
                         </tr>
                     </thead>
+                    
                     <tbody id="nflteams">
 
                         <!-- Adding a maximum of 5 teams from API  -->
 
 
                     </tbody>
+                
                 </table>
+            </div>
                 <button class="btn btn-primary my-2 my-sm-0" id="go-back-home-now">Back</button>
                 <button class="btn btn-primary my-2 my-sm-0" id="go-to-bet-board">Place Bets</button>
                 <!-- <button class="btn btn-primary my-2 my-sm-0 resetbets" type="submit">Back</button> -->
                 <p class="lead">
                 </p>
+                
             </div>
         </div>
 
@@ -309,6 +315,7 @@ Features: This code was built on JS, HTML, HTML5, CSS, CSS, Bootstrap, Firebase 
                     <p class="lead">LEADER BOARDS</p>
                     <p>Weekly Betting Champions</p>
                 </div>
+                <div id="tableBody">
                 <table id="tablePreview" class="table table-hover table-sm">
                     <thead>
                         <tr>
@@ -318,19 +325,13 @@ Features: This code was built on JS, HTML, HTML5, CSS, CSS, Bootstrap, Firebase 
                             <th>Total Tokens</th>
                         </tr>
                     </thead>
-                    <tbody id="derpaderp">
+                    <tbody id="tableChampion">
 
-                        <!-- Inser Records Here -->
-
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>John Q Public</td>
-                            <td>552,133</td>
-                            <td>1,212,808</td>
-                        </tr>
-
+                        <!-- Firebase inserts champions here -->
+                      
                     </tbody>
                 </table>
+                </div>
                 <button class="btn btn-primary my-2 my-sm-0" id="go-to-home">Home</button>
                 <p class="lead">
                 </p>
@@ -346,7 +347,8 @@ Features: This code was built on JS, HTML, HTML5, CSS, CSS, Bootstrap, Firebase 
                     <div class="nflbets-stats">
                         <p class="lead">NFL NEWS ROOM</p>
                     </div>
-                    <table id="tablePreview" class="table table-hover table-sm">
+                    <div id="tableNews">
+                    <table id="TheNews" class="table table-hover table-sm">
                         <thead>
                             <tr>
                                 <th>Latest Headlines</th>
@@ -359,6 +361,7 @@ Features: This code was built on JS, HTML, HTML5, CSS, CSS, Bootstrap, Firebase 
                             
                         </tbody>
                     </table>
+                </div>
                     <button class="btn btn-primary my-2 my-sm-0" id="close-the-news">Home</button>
                     <p class="lead">
                     </p>
