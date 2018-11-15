@@ -1,10 +1,9 @@
 // Author: The Dream Team (Peter Santiago, Brenton Wyman, Ruben Galleguillos)
-// Updated: 11.01.2018
+// Updated: 11.13.2018
 // Purpose: Fantasy Football/Craps Betting Themed Game
-// Features: This code was built on JS, HTML, HTML5, CSS, CSS3, and Bootstrap
+// This code was built on JS, HTML, HTML5, CSS, CSS3, Firebase, and Bootstrap
+// Note: This is a WIP, there is a bit of functionality that requires additional updates.
 
-// This is a Test Harness JS for the Login, Team Selector, and Bet Page Flow
-// Section also validates that data (is at least) reaching the database
 
 // Initialize Firebase
 
@@ -19,10 +18,7 @@ var config = {
 firebase.initializeApp(config);
 var database = firebase.database();
 
-// Test Harness: New Player
-// var newplayer
-
-// Test Harness: Variables
+// Static wins losses and draws for the 3 teams selected
 var wins1, wins2, wins3, loss1, loss2, loss3, draw1, draw2, draw3;
 wins1 = wins2 = wins3 = loss1 = loss2 = loss3 = draw1 = draw2 = draw3 = 0;
 
@@ -32,8 +28,9 @@ odds1 = odds2 = odds3 = 0;
 var team1earn, team2earn, team3earn;
 team1earn = team2earn = team3earn = 0;
 
+// Declared game variable stack
 var totalbets = 0
-var totaltokens = 9000
+var totaltokens = 5000
 var tokensearned = 0
 var totalearnings = 0
 var betlocker = "false"
@@ -41,74 +38,90 @@ var currentplayer
 var gameplayer
 var teamcounter = 0
 
-    
-function displaynflteams(){
-    
-        $.ajax({
+// Default Account Setup
+var starter_tokensearned = "5000"
+var starter_t1_earn = "0"
+var starter_t2_earn = "0"
+var starter_t3_earn = "0"
+var starter_t_earnings = "0"
+
+// API 1: Displays teams that users can select from to bet
+function displaynflteams() {
+
+    $.ajax({
             type: "GET",
             url: "https://api.fantasydata.net/v3/nfl/scores/JSON/GameStatsByWeek/2018/8?key=ad398993c55d46449bde67a4095fef1b",
             dataType: "json"
         })
-        .done(function(response) {
+        .done(function (response) {
             for (var i = 0; i < 5; i++) {
-            // index, Team, Point Spread, Odds (fixed), Select Button
-            console.log("Away Team: " + response[i].AwayTeam + " Away Score " + response[i].AwayScore + " Home Score " + response[i].HomeScore)
-            // $("#nflteams").append("<tr><th scope=row>" + i + "</th><td>" + response[i].HomeTeam + "</td><td>" + response[i].PointSpread + 
-            // "</td><td id=odds-" + i + "1>2</td><td id=place-bets-" + i + "><button class=btn btn-primary my-2 my-sm-0 pb id=pick-team-" + i + 
-            // ">Select</button></td></tr>")
 
-            $('#nflteams').append("<tr><th scope='row'>" + i + "</th><td>" + response[i].HomeTeam + 
-            "</td><td>" + response[i].PointSpread + "</td><td id='odds-" + i + "'>2</td><td id='place-bets-" + i + 
-            "'><button class='btn btn-primary my-2 my-sm-0 pb' id='pick-team-" + i + "'>Select</button></td></tr>")
+                //Use API to build each candidate "Team" Record
+                $('#nflteams').append("<tr><th scope='row'>" + i + "</th><td>" + response[i].HomeTeam +
+                    "</td><td>" + response[i].PointSpread + "</td><td id='odds-" + i + "'>2</td><td id='place-bets-" + i +
+                    "'><button class='btn btn-primary my-2 my-sm-0 pb' id='pick-team-" + i + "'>Coming Soon</button></td></tr>")
             }
-         })
-    }      
-
-
-    function buildQueryURL() {
-        var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?";
-        var queryParams = { "api-key": "b9f91d369ff59547cd47b931d8cbc56b:0:74623931" };
-        queryParams.q = "NFL";
-        queryParams.begin_date = "20170101";
-        queryParams.end_date = "20180101";
-        return queryURL + $.param(queryParams);
-        }
-      function updatePage(NFLNews) {
-        var numArticles = 3
-      
-        for (var i = 0; i < numArticles; i++) {
-          var article = NFLNews.response.docs[i];
-          var headline = article.headline;
-          console.log(headline.main)
-          var headlinelink = article.web_url;
-          console.log(headlinelink)
-        }
-    }
-     
-        var queryURL = buildQueryURL();
-      
-        $.ajax({
-          url: queryURL,
-          method: "GET"
-        }).then(updatePage);
-     
-
-$(document).ready(function () {
-
-    $('.bt').simpleMask({'mask': ['###']});
-    
-});
-
-function hidethestack() {
-    $("#hide-the-welcome").show();
-    $("#hide-the-team").hide();
-    $("#hide-the-bets").hide();
-    $("#hide-the-champs").hide();
+        })
 }
 
-hidethestack();
-displaynflteams();
-// displaynflnews();
+// API 2: NFL News ticker for splash page on click
+
+$('.teams').on('click', function () {
+
+    
+    $("#nflnewstable").empty();
+
+    takemetothenews();
+
+    var nflnewsitem = $(this).text();
+    
+    function buildQueryURL() {
+
+        var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?";
+        var queryParams = {
+            "api-key": "b9f91d369ff59547cd47b931d8cbc56b:0:74623931"
+        };
+        queryParams.q = nflnewsitem;
+        queryParams.begin_date = "20180101";
+        queryParams.end_date = "20181101";
+        return queryURL + $.param(queryParams);
+    }
+
+    function updatePage(NFLNews) {
+        var numArticles = 3
+
+        for (var i = 0; i < numArticles; i++) {
+            var article = NFLNews.response.docs[i];
+            var headline = article.headline;
+            console.log(headline.main)
+            var headlinelink = article.web_url;
+            console.log(headlinelink)
+
+            $('#nflnewstable').append("<tr><td> " + i + " </td><td><i> " + headline.main + " </i></td></tr>" + 
+            "<tr><td></td><td><a href=" + headlinelink + " target=\"_blank\">" + headlinelink + "</a></td></tr>")
+        }
+    }
+
+    var queryURL = buildQueryURL();
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(updatePage);
+
+    // numArticles = 0
+    // headline = ""
+    // headlinelink = ""
+})
+
+// Manages bogus user
+$(document).ready(function () {
+
+    $('.bt').simpleMask({
+        'mask': ['###']
+    });
+
+});
 
 // Test Harness: Realtime Calculations and DB Write
 $('input').keyup(function () {
@@ -116,9 +129,9 @@ $('input').keyup(function () {
     overbet();
 });
 
-// Test Harness: Interim Bet Engine
+// Betting Form
 function calcbets() {
-    
+
     wins1 = $("#wins-1").val().trim();
     loss1 = $("#loss-1").val().trim();
     draw1 = $("#draw-1").val().trim();
@@ -134,7 +147,7 @@ function calcbets() {
     team1earn = parseInt(wins1) + parseInt(loss1) + parseInt(draw1);
     team2earn = parseInt(wins2) + parseInt(loss2) + parseInt(draw2);
     team3earn = parseInt(wins3) + parseInt(loss3) + parseInt(draw3);
-    
+
     totalbets = team1earn + team2earn + team3earn
 
     tokensearned = totaltokens - totalbets
@@ -146,62 +159,36 @@ function calcbets() {
     $("#totalearnings").text(totalbets);
     $("#tokens-earned").text(tokensearned);
 
-    // Test Harness: Score write
-    database.ref().update({
-        t_token: tokensearned,
-        t1_earn: team1earn,
-        t2_earn: team2earn,
-        t3_earn: team3earn,
-        t_earnings: totalbets
-    });
 }
 
-function overbet() {
-    if (tokensearned < 1) {
-        $("#mymodal-youwentover").modal('show');
-        $(':input').val(0);
 
-        $("#earn-1").text(0);
-        $("#totalearnings").text(0);
-        $("#tokens-earned").text(5000);
-    }
-}
-
-$("#reset-this").click(function () {
-    tokensearned = 0;
-    overbet();
-});
-
-$("#bet-this").click(function () {
-    betlocker = "True";
-    // insert special FX
-    database.ref().update({
-        betlock: betlocker
-    });
-});
-
-$("#pick-team-1").attr("disabled", true);
 
 $("#go-bet-now").click(function () {
- 
-    $("#game-player").on("keyup change", function () {
-        gameplayer = this.value;
-    });
 
-    if (gameplayer === "superplayer2018") {
-        $("#mymodal-existing").modal('show');
-        $("#hide-the-welcome").hide();
-        $("#hide-the-team").hide();
-        $("#hide-the-bets").show();
-        $("#hide-the-champs").hide();
-    } else {
-        $("#mymodal-register").modal('show');
-        $("#hide-the-welcome").hide();
-        $("#hide-the-team").show();
-        $("#hide-the-bets").hide();
-        $("#hide-the-champs").hide();
+    gameplayer = $("#thesearenotthedroids").val();
 
-    }
+    database.ref().push({
+        player: gameplayer,
+        t_token: starter_tokensearned,
+        t1_earn: starter_t1_earn,
+        t2_earn: starter_t2_earn,
+        t3_earn: starter_t3_earn,
+        t_earnings: starter_t_earnings,
+        dateAdded: firebase.database.ServerValue.TIMESTAMP
+    })
+
+    console.log(gameplayer)
+    console.log(starter_tokensearned)
+    console.log(starter_t1_earn)
+    console.log(starter_t2_earn)
+    console.log(starter_t3_earn)
+    console.log(starter_t_earnings)
+
+    $("#mymodal-register").modal('show');
+    $("#hide-the-welcome").hide();
+    $("#hide-the-team").show();
+    $("#hide-the-bets").hide();
+    $("#hide-the-champs").hide();
 
 });
 
@@ -210,49 +197,18 @@ $("#go-to-champs").click(function () {
     $("#hide-the-team").hide();
     $("#hide-the-bets").hide();
     $("#hide-the-champs").show();
+    listthechamps();
 });
 
-// Disable Button Count
-
-$(".pb").click(function () {
-    $(this).attr("disabled", true);
-    teamcounter++
-    console.log("teamcounter " + teamcounter)
-    // if (teamcounter === 3){
-    //     $("#hide-the-welcome").hide();
-    //     $("#hide-the-team").hide();
-    //     $("#hide-the-bets").show();
-    //     $("#hide-the-champs").hide();
-    // }
-});
-
-// End Series
-$("#go-back-to-teams").click(function () {
-    $("#hide-the-welcome").hide();
-    $("#hide-the-team").show();
-    $("#hide-the-bets").hide();
-    $("#hide-the-champs").hide();
-});
-
-$("#go-to-bet-board").click(function () {
-    $("#hide-the-welcome").hide();
-    $("#hide-the-team").hide();
-    $("#hide-the-bets").show();
-    $("#hide-the-champs").hide();
-});
+function listthechamps() {
 
 
-$("#go-to-home").click(function () {
-    $("#hide-the-welcome").show();
-    $("#hide-the-team").hide();
-    $("#hide-the-bets").hide();
-    $("#hide-the-champs").hide();
-});
+    // dataRef.child('player').orderByKey().limitToLast(10).on('child_added', function(snapshot) {
+    dataRef.ref().orderByChild("player").limitToFirst(10).on("child_added", function (snapshot) {
+        // Change the HTML to reflect
 
-$("#go-back-home-now").click(function () {
-    $("#hide-the-welcome").show();
-    $("#hide-the-team").hide();
-    $("#hide-the-bets").hide();
-    $("#hide-the-champs").hide();
-});
+        console.log(snapshot.val().player);
 
+    });
+
+}

@@ -51,7 +51,7 @@ code {
   color: white;
 }
 
-.nflb-welcome, .nflb-bets, .nflb-team, .nflb-champs   {
+.nflb-welcome, .nflb-bets, .nflb-team, .nflb-champs, .nflb-news   {
   width: 800px;
   height: 400px;
   
@@ -101,3 +101,7 @@ color: rgb(29, 52, 95);
   color: rgb(133, 28, 124);
 }
 
+.teams {
+  padding-left: 1px;
+  padding-right: 1px;
+}

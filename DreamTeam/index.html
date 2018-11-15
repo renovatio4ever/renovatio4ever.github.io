@@ -117,9 +117,54 @@ Features: This code was built on JS, HTML, HTML5, CSS, CSS, Bootstrap, Firebase 
       <button class="btn btn-primary my-2 my-sm-0 playnow">Play!</button>
       </form> -->
             <div class="user-login form-inline">
-                <span class="bet-pot-tokens"><input class="form-control mr-sm-2" type="registration" placeholder=""
-                        aria-label="player-alias" id="game-player" value="superplayer2018-A"></span>
-                <span class="bet-pot-amount"><button class="btn btn-primary my-2 my-sm-0" id="go-bet-now">Play!</button></span>
+                <!-- Drop down for football team News -->
+<span>
+        <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle nfllistbutton" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">NFL Team News
+                        </button>
+                        <div class="dropdown-menu nflist" aria-labelledby="dropdownMenuButton">
+                            <a class="AtlantaFalcons teams" href="#">Atlanta Falcons</a><br>
+                            <a class="BaltimoreRavens teams" href="#"> Baltimore Ravens</a><br>
+                            <a class="BuffaloBills teams" href="#"> Buffalo Bills</a><br>
+                            <a class="CarolinaPanthers teams" href="#"> Carolina Panthers</a><br>
+                            <a class="ChicagoBears teams" href="#"> Chicago Bears</a><br>
+                            <a class="CincinnatiBengals teams" href="#"> Cincinnati Bengals</a><br>
+                            <a class="ClevelandBrowns teams" href="#"> Cleveland Browns</a><br>
+                            <a class="DallasCowboys teams" href="#"> Dallas Cowboys</a><br>
+                            <a class="DenverBroncos teams" href="#"> Denver Broncos</a><br>
+                            <a class="DetroitLions teams" href="#"> Detroit Lions</a><br>
+                            <a class="GreenBayPackers teams" href="#">Green Bay Packers</a><br>
+                            <a class="HoustonTexans teams" href="#">Houston Texans</a><br>
+                            <a class="IndianapolisColts teams" href="#">Indianapolis Colts</a><br>
+                            <a class="JacksonvilleJaguars teams" href="#">Jacksonville Jaguars</a><br>
+                            <a class="KansasCityChiefs teams" href="#">Kansas City Chiefs</a><br>
+                            <a class="LosAngelesChargers teams" href="#">Los Angeles Chargers</a><br>
+                            <a class="LosAngelesRams teams" href="#">Los Angeles Rams</a><br>
+                            <a class="MiamiDolphins teams" href="#">Miami Dolphins</a><br>
+                            <a class="MinnesotaVikings teams" href="#">Minnesota Vikings</a><br>
+                            <a class="NewEnglandPatriots teams" href="#">New England Patriots</a><br>
+                            <a class="NewOrleansSaints teams" href="#">New Orleans Saints</a><br>
+                            <a class="NewYorkGiants teams" href="#">New York Giants</a><br>
+                            <a class="NewYorkJets teams" href="#">New York Jets</a><br>
+                            <a class="OaklandRaiders teams" href="#">Oakland Raiders</a><br>
+                            <a class="PhiladelphiaEagles teams" href="#">Philadelphia Eagles</a><br>
+                            <a class="PittsburghSteelers teams" href="#">Pittsburgh Steelers</a><br>
+                            <a class="SanFrancisco49ers teams" href="#">San Francisco 49ers</a><br>
+                            <a class="SeattleSeahawks teams" href="#">Seattle Seahawks</a><br>
+                            <a class="TampaBayBuccaneers teams" href="#">Tampa Bay Buccaneers</a><br>
+                            <a class="TennesseeTitans teams" href="#">Tennessee Titans</a><br>
+                            <a class="WashingtonRedskins teams" href="#">Washington Redskins</a>
+                        </div>
+                    </div>
+                </span>&nbsp;&nbsp;
+
+
+
+
+                <span class="bet-pot-tokens"><input class="form-control mr-sm-2 spongebob" type="registration"
+                        placeholder="" aria-label="player-alias" id="thesearenotthedroids" value="superplayer2018-A"></span>
+                <span class="bet-pot-amount"><button class="btn btn-primary my-2 my-sm-0 playitnow" id="go-bet-now">Play!</button></span>
             </div>
 
         </div>
@@ -170,7 +215,7 @@ Features: This code was built on JS, HTML, HTML5, CSS, CSS, Bootstrap, Firebase 
                     <tbody id="nflteams">
 
                         <!-- Adding a maximum of 5 teams from API  -->
-                    
+
 
                     </tbody>
                 </table>
@@ -217,7 +262,7 @@ Features: This code was built on JS, HTML, HTML5, CSS, CSS, Bootstrap, Firebase 
                             <td><input name="win[]" class="form-control col-xs-2 win bt" id="wins-1" value="0"></td>
                             <td><input name="loss[]" class="form-control col-xs-2 loss bt" id="loss-1" value="0"></td>
                             <td><input name="draw[]" class="form-control col-xs-2 draw bt" id="draw-1" value="0"></td>
-                            <td id="odds-1">4</td> 
+                            <td id="odds-1">4</td>
                             <td id="earn-1">0</td>
                         </tr>
                         <tr>
@@ -273,37 +318,17 @@ Features: This code was built on JS, HTML, HTML5, CSS, CSS, Bootstrap, Firebase 
                             <th>Total Tokens</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="derpaderp">
+
+                        <!-- Inser Records Here -->
+
                         <tr>
                             <th scope="row">1</th>
                             <td>John Q Public</td>
                             <td>552,133</td>
                             <td>1,212,808</td>
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>George Bush</td>
-                            <td>300,123</td>
-                            <td>50,000</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Fredrick Douglas</td>
-                            <td>13,124</td>
-                            <td>12,223</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>I Trolled</td>
-                            <td>8,124</td>
-                            <td>2,223</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>KermitTheFrog</td>
-                            <td>3,124</td>
-                            <td>2,223</td>
-                        </tr>
+
                     </tbody>
                 </table>
                 <button class="btn btn-primary my-2 my-sm-0" id="go-to-home">Home</button>
@@ -311,6 +336,34 @@ Features: This code was built on JS, HTML, HTML5, CSS, CSS, Bootstrap, Firebase 
                 </p>
             </div>
         </div>
+
+
+   <!-- NFL NEWSROOM    -->
+   <!--------------------->
+
+        <div class="nflb-news" id="hide-the-news">
+                <div class="jumbotron">
+                    <div class="nflbets-stats">
+                        <p class="lead">NFL NEWS ROOM</p>
+                    </div>
+                    <table id="tablePreview" class="table table-hover table-sm">
+                        <thead>
+                            <tr>
+                                <th>Latest Headlines</th>
+                            </tr>
+                        </thead>
+                        <tbody id="nflnewstable">
+    
+                            <!-- API will populate with latest news -->
+    
+                            
+                        </tbody>
+                    </table>
+                    <button class="btn btn-primary my-2 my-sm-0" id="close-the-news">Home</button>
+                    <p class="lead">
+                    </p>
+                </div>
+            </div>
 
 
 
@@ -329,6 +382,7 @@ Features: This code was built on JS, HTML, HTML5, CSS, CSS, Bootstrap, Firebase 
         <script src="assets/javascript/simplemask.js"></script>
         <script src="assets/javascript/simplemask.min.js"></script>
         <script src="assets/javascript/game.js"></script>
+        <script src="assets/javascript/gamesetup.js"></script>
 
     </body>
 
