@@ -68,13 +68,13 @@ function displaynflteams() {
 
 $('.teams').on('click', function () {
 
-    
+
     $("#nflnewstable").empty();
 
     takemetothenews();
 
     var nflnewsitem = $(this).text();
-    
+
     function buildQueryURL() {
 
         var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?";
@@ -97,8 +97,8 @@ $('.teams').on('click', function () {
             var headlinelink = article.web_url;
             console.log(headlinelink)
 
-            $('#nflnewstable').append("<tr><td> " + i + " </td><td><i> " + headline.main + " </i></td></tr>" + 
-            "<tr><td></td><td><a href=" + headlinelink + " target=\"_blank\">" + headlinelink + "</a></td></tr>")
+            $('#nflnewstable').append("<tr><td> " + i + " </td><td><i> " + headline.main + " </i></td></tr>" +
+                "<tr><td></td><td><a href=" + headlinelink + " target=\"_blank\">" + headlinelink + "</a></td></tr>")
         }
     }
 
@@ -199,13 +199,13 @@ function listthechamps() {
     $("#tableChampion").empty();
 
     var database = firebase.database();
-    database.ref().once('value', function(snapshot){
-         if(snapshot.exists()){
+    database.ref().once('value', function (snapshot) {
+        if (snapshot.exists()) {
             var content = '';
-            snapshot.forEach(function(data){
+            snapshot.forEach(function (data) {
                 y++
                 var val = data.val();
-                content +='<tr>';
+                content += '<tr>';
                 content += '<td>' + y + '</td>';
                 content += '<td>' + val.player + '</td>';
                 content += '<td>' + val.t_earnings + '</td>';
