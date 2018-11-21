@@ -1017,7 +1017,7 @@
 
 .teal-text.text-lighten-2 {
   color: #f5f3f7 !important;
-  text-shadow: 2px 2px rgb(121, 118, 118);
+  /* text-shadow: 2px 2px rgb(121, 118, 118); */
 }
 
 .teal.lighten-1 {
