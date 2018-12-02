@@ -1,0 +1,39 @@
+/* style sheet only for text and color */
+#head1
+{
+    text-align: center;
+    color: rgb(215, 202, 228);
+}
+#head2
+{
+    text-align: center;
+    text-shadow: 2px 2px rgb(15, 14, 14);
+}
+#head3
+{
+    text-align: center;
+    text-shadow: 2px 2px rgb(15, 14, 14);
+}
+#p1
+{
+    text-align: center;
+    color: black;
+}
+#p2
+{
+    text-align: center;
+    color: black;
+}
+#area1
+{
+    text-align: center;
+}
+
+#uk-cont-lg, #uk-cont-sm {
+    background-color: rgb(200, 169, 214);
+}
+
+body
+{
+    background-image: url("../images/coolbg.jpg");
+}
