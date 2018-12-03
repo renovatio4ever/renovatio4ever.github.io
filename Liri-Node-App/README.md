@@ -4,7 +4,7 @@ Welcome! The Node JS Liri Bot App is a NodeJS command line app that allows you t
 ## Demo
 [![Liri Demo](./assets/images/myliriproject.gif)](https://github.com/renovatio4ever/renovatio4ever.github.io/tree/master/Liri-Node-App)
 
-## Online Guild
+## Online Guide
 An "quick" online guide is available to briefly explain the use of the application
 [![Node JS Liri Bot Online Guide](./assets/images/howto_onlineguide.jpg)](https://renovatio4ever.github.io/Liri-Node-App/)
 
@@ -42,7 +42,7 @@ Make sure to register for spotify to obtain your CLIENT_ID, and SECRET_ID to add
 - `moment` Used to acquire current time stamp and format date input. In this solution we are only using it to acquire the current time stamp.
 - `node-cmd` Pretty clever npm used to process user or system commands.
 
-### Usage
+## Usage
 Available subcommands include:
 - `node liri help` - brings up quick usage guide
 - `node liri concert-this <artist name>` - searches for upcoming concerts for your specified artist.
@@ -53,7 +53,7 @@ Available subcommands include:
 spotify-this-song, "five finger death punch"
 ```
 
-### Log
+## Log
 A history of all output is saved in the file `log.txt`. To access the log file enter the command:
 - `node liri log` - outputs log file
 
