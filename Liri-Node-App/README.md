@@ -13,7 +13,7 @@ To install and run Liri, type the following in your terminal:
 ```
 git clone https://github.com/renovatio4ever/renovatio4ever.github.io.git Liri-Node-App
 cd Liri-Node-App
-npm install
+npm init
 npm install bandsintown
 npm install node-spotifiy-api
 npm install omdb
@@ -31,6 +31,7 @@ node liri.js <subcommand> <option>
 Make sure to register for spotify to obtain your CLIENT_ID, and SECRET_ID to add to the `.env` file! To see available subcommands, simply type `node liri.js help` or scroll down this page.
 
 ## NPM Package Usage Summary
+- `npm init` First and required step! Initializes package.json.
 - `bandsintown` Bands API
 - `node-spotifiy-api` Spotify API. Requires registration and obtaining CLIENT_ID, and SECRET_ID.
 - `omdb` OMDB Movie API. Requires registration and obtaining free limited client key.
