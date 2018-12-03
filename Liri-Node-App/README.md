@@ -6,7 +6,7 @@ Welcome! The Node JS Liri Bot App is a NodeJS command line app that allows you t
 
 ## Online Guild
 An "quick" online guide is available to briefly explain the use of the application
-[![Node JS Liri Bot Online Guide](./assets/images/howto_onlineguide.jpg)](file:///D:/MYPROJECTS/githubsite/Liri-Node-App/index.html)
+[![Node JS Liri Bot Online Guide](./assets/images/howto_onlineguide.jpg)](https://renovatio4ever.github.io/Liri-Node-App/)
 
 ## Installation
 To install and run Liri, type the following in your terminal:
@@ -61,6 +61,8 @@ A history of all output is saved in the file `log.txt`. To access the log file e
         ${chalk.green('Pre defined entry')}: ${chalk.blue('node liri do-what-it-says <no input>')}
                 `)
 ```
+[![NPM Chalk](./assets/images/howto_chalk.jpg)](https://www.npmjs.com/package/chalk)
+
 - This application also features the `npm figlet` package which allows for application of fancy ASCII text from a simple input string. In this snippet the string `Cool Title` is passed to the npm with `ANSI Shadow` ASCII art type. The result is the depicted application title.
 ```
  console.clear();
@@ -75,8 +77,7 @@ A history of all output is saved in the file `log.txt`. To access the log file e
             return;
         }
 ```
-![Figlet Demo](./assets/images/howto_figlet.jpg)
-
+[![NPM Figlet](./assets/images/howto_figlet.jpg)](https://www.npmjs.com/package/figlet)
 
 ## Road Map
 - [ ] Add improved error handling for search queries that return a null or erroneous value
