@@ -1,2 +1,57 @@
-# LIRI-Bot
+# LIRI-NODE-APP
+Welcome! The Liri Node App is a NodeJS command line app that allows you to search for songs, movies, and upcoming concerts. The application includes additional features to enhance user experience
+
+## Demo
+![demo](./assets/images/myliriproject.gif)
+
+## Online Guild
+An "quick" online guide is available to briefly explain the use of the application
+[![Node JS Liri Bot Online Guide](./assets/images/howto_onlineguide.jpg)](file:///D:/MYPROJECTS/githubsite/Liri-Node-App/index.html)
+
+## Installation
+To install and run Liri, type the following in your terminal:
+```
+git clone https://github.com/renovatio4ever/renovatio4ever.github.io.git Liri-Node-App
+cd Liri-Node-App
+npm install
+npm install bandsintown
+npm install node-spotifiy-api
+npm install omdb
+npm install axios
+npm install chalk
+npm install dotenv
+npm install figlet
+npm install fs
+npm install moment
+npm install node-cmd
+touch .env
+Add your spotify client and secret ID
+node liri.js <subcommand> <option>
+```
+Make sure to register for spotify to obtain your CLIENT_ID, and SECRET_ID to add to the `.env` file! To see available subcommands, simply type `node liri.js help` or scroll down this page.
+
+### Usage
+Available subcommands include:
+- `node liri help` - brings up quick usage guide
+- `node liri concert-this <artist name>` - searches for upcoming concerts for your specified artist.
+- `node liri spotify-this-song <search query>` - searches Spotify for your query and returns the top song name, artist name, album name, and a 30 second MP3 preview.
+- `node liri movie-this <movie name>` - searches for your specified movie and returns many details, such as the release year, ratings, and actors.
+- `node liri do-what-it-says` - if a file called "random.txt" exists in your current working directory, Liri will execute any of its commands found in that file. Example contents of random.txt:
+```
+spotify-this-song, "five finger death punch"
+```
+
+### Log
+A history of all output is saved in the file `log.txt`. To access the log file enter the command:
+- `node liri log` - outputs log file
+
+## Features
+- [x] Written using: HTML5, CSS, NODEJS, JS, UIkit, and leverages NPM packages for user input processing
+- [x] Uses the `npm chalk` package for text colors
+- [x] Uses the `npm figlet` package for large ASCII header
+
+## Road Map
+- [ ] Add improved error handling for search queries that return a null or erroneous value
+- [ ] Convert to list user inputs to limit potential user entry errors
+
 
