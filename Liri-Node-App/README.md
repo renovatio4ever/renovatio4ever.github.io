@@ -1,8 +1,8 @@
-# LIRI-NODE-APP
-Welcome! The Liri Node App is a NodeJS command line app that allows you to search for songs, movies, and upcoming concerts. The application includes additional features to enhance user experience
+# The NodeJS Liri Bot
+Welcome! The Node JS Liri Bot App is a NodeJS command line app that allows you to search for songs, movies, and upcoming concerts. The application includes additional features to enhance user experience
 
 ## Demo
-![demo](./assets/images/myliriproject.gif)
+![Liri Demo](./assets/images/myliriproject.gif)
 
 ## Online Guild
 An "quick" online guide is available to briefly explain the use of the application
@@ -49,6 +49,34 @@ A history of all output is saved in the file `log.txt`. To access the log file e
 - [x] Written using: HTML5, CSS, NODEJS, JS, UIkit, and leverages NPM packages for user input processing
 - [x] Uses the `npm chalk` package for text colors
 - [x] Uses the `npm figlet` package for large ASCII header
+
+## Coding Highlights
+- This application features the `npm chalk` package which allows for customization of text colors. The following snippet demonstrates the application of colors for the output results of `node liri help` console output
+```
+ console.log(`
+        ${chalk.inverse.cyan('How to use The Liri Bot')}
+        ${chalk.green('Concerts')}: ${chalk.blue('node liri concert-this <concert/band name>')} 
+        ${chalk.green('Spotify')}: ${chalk.blue('node liri spotify-this-song <desired song>')} 
+        ${chalk.green('Movies')}: ${chalk.blue('node liri movie-this <movie title>')}
+        ${chalk.green('Pre defined entry')}: ${chalk.blue('node liri do-what-it-says <no input>')}
+                `)
+```
+- This application also features the `npm figlet` package which allows for application of fancy ASCII text from a simple input string. In this snippet the string `Cool Title` is passed to the npm with `ANSI Shadow` ASCII art type. The result is the depicted application title.
+```
+ console.clear();
+    figlet.text('Node JS Liri Bot', {
+        font: 'ANSI Shadow',
+        horizontalLayout: 'default',
+        verticalLayout: 'default'
+    }, function (err, data) {
+        if (err) {
+            console.log('Something went wrong...');
+            console.dir(err);
+            return;
+        }
+```
+![Figlet Demo](./assets/images/howto_figlet.jpg)
+
 
 ## Road Map
 - [ ] Add improved error handling for search queries that return a null or erroneous value
