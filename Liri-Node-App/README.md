@@ -5,8 +5,9 @@ Welcome! The Node JS Liri Bot App is a NodeJS command line app that allows you t
 [![Liri Demo](./assets/images/myliriproject.gif)](https://github.com/renovatio4ever/renovatio4ever.github.io/tree/master/Liri-Node-App)
 
 ## Online Guide
-An "quick" online guide is available to briefly explain the use of the application
-[![Node JS Liri Bot Online Guide](./assets/images/howto_onlineguide.jpg)](https://renovatio4ever.github.io/Liri-Node-App/)
+Before you take a journey with me through the wonderful world of coding this Node JS app, why don't you visit the website for a brief tutorial.
+
+[![Node JS Liri Bot Online Guide](./assets/images/howto_takeajourney.jpg)](https://renovatio4ever.github.io/Liri-Node-App/)
 
 ## Installation
 To install and run Liri, type the following in your terminal:
