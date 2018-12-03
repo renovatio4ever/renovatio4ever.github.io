@@ -2,7 +2,7 @@
 Welcome! The Node JS Liri Bot App is a NodeJS command line app that allows you to search for songs, movies, and upcoming concerts. The application includes additional features to enhance user experience
 
 ## Demo
-![Liri Demo](./assets/images/myliriproject.gif)
+[![Liri Demo](./assets/images/myliriproject.gif)](https://github.com/renovatio4ever/renovatio4ever.github.io/tree/master/Liri-Node-App)
 
 ## Online Guild
 An "quick" online guide is available to briefly explain the use of the application
@@ -29,6 +29,18 @@ Add your spotify client and secret ID
 node liri.js <subcommand> <option>
 ```
 Make sure to register for spotify to obtain your CLIENT_ID, and SECRET_ID to add to the `.env` file! To see available subcommands, simply type `node liri.js help` or scroll down this page.
+
+## NPM Package Usage Summary
+- `bandsintown` Bands API
+- `node-spotifiy-api` Spotify API. Requires registration and obtaining CLIENT_ID, and SECRET_ID.
+- `omdb` OMDB Movie API. Requires registration and obtaining free limited client key.
+- `axios` Process API requests.
+- `chalk` Cosmetic. Applies colors to console text.
+- `dotenv` Allows processing of keys required to process API requests.
+- `figlet` Converts simple strings into wonder ASCII works of art.
+- `fs` Allows solution to read and write to flat files stored on the computer (i.e. logs.txt)
+- `moment` Used to acquire current time stamp and format date input. In this solution we are only using it to acquire the current time stamp.
+- `node-cmd` Pretty clever npm used to process user or system commands.
 
 ### Usage
 Available subcommands include:
