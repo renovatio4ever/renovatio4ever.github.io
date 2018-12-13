@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Star Wars - Express</title>
+  <title>Final Fantasy - Express</title>
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,8 +16,8 @@
 
   <div class="container">
     <div class="jumbotron">
-      <h1>Star Wars Express</h1>
-      <h3>The greatest resource in the galaxy for Star Wars statistics!</h3>
+      <h1>Final Fantasy Express</h1>
+      <h3>Compendium of all things Final Fantasy!</h3>
       <hr>
       <a href="/add"><button class="btn btn-danger btn-lg"><span class="fa fa-plus"></span> Add New Character</button></a>
       <a href="/all"><button class="btn btn-danger btn-lg"><span class="fa fa-th-list"></span> All Characters</button></a>
@@ -34,8 +34,7 @@
             <input type="text" id="character-search" class="form-control">
             <br>
             <div class="text-right">
-              <button type="submit" class="btn btn-primary btn-md" id="search-btn"><span class="fa fa-search"></span> Search
-                Your Feelings. You know it is true.</button>
+              <button type="submit" class="btn btn-primary btn-md" id="search-btn"><span class="fa fa-search"></span>Trust the warm light of the crystal.</button>
 
             </div>
           </div>
@@ -46,11 +45,11 @@
             <h3><strong>Character Statistics</strong></h3>
           </div>
           <div class="card-body">
-            <h2 id="name">Yoda</h2>
+            <h2 id="name">Cloud Strife</h2>
             <div id="stats">
-              <h3><strong>Role:</strong> <span id="role">Jedi Master</span></h3>
-              <h3><strong>Age:</strong> <span id="age">900</span></h3>
-              <h3><strong>Force Points:</strong> <span id="force-points">2000</span></h3>
+              <h3><strong>Role:</strong> <span id="role">Warrior</span></h3>
+              <h3><strong>Age:</strong> <span id="age">21</span></h3>
+              <h3><strong>Hit Points:</strong> <span id="hit-points">2000</span></h3>
             </div>
           </div>
         </div>
@@ -73,10 +72,10 @@
           $("#name").text(data.name);
           $("#role").text(data.role);
           $("#age").text(data.age);
-          $("#force-points").text(data.forcePoints);
+          $("#hit-points").text(data.hitpoints);
         }
         else {
-          $("#name").text("The force is not strong with this one. Your character was not found.");
+          $("#name").text("Your character was not found within the light of the crystal.");
           $("#stats").hide();
         }
       });

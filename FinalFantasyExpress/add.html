@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Star Wars - Express</title>
+  <title>Final Fantasy - Express</title>
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,8 +16,8 @@
 
   <div class="container">
     <div class="jumbotron">
-      <h1>Star Wars Express</h1>
-      <h3>The greatest resource in the galaxy for Star Wars statistics!</h3>
+      <h1>Final Fantasy Express</h1>
+      <h3>Compendium of all things Final Fantasy!</h3>
       <hr>
       <a href="/">
         <button class="btn btn-danger btn-lg">
@@ -55,15 +55,15 @@
               </div>
 
               <div class="form-group">
-                <label for="force-points">Force Points</label>
-                <input type="text" class="form-control" id="force-points">
+                <label for="hit-points">Hit Points</label>
+                <input type="text" class="form-control" id="hit-points">
               </div>
 
             </form>
             <br>
             <div class="text-right">
               <button type="submit" class="btn btn-primary btn-md" id="add-btn">
-                <span class="fa fa-fire"></span> Add to the Force</button>
+                <span class="fa fa-fire"></span>Add to the Crystal</button>
             </div>
           </div>
         </div>
@@ -81,7 +81,7 @@
         name: $("#name").val().trim(),
         role: $("#role").val().trim(),
         age: $("#age").val().trim(),
-        forcePoints: $("#force-points").val().trim()
+        hitpoints: $("#hit-points").val().trim()
       };
 
       // Question: What does this code do??
