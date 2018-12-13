@@ -2,7 +2,7 @@
 Welcome! The Node JS Liri Bot App is a NodeJS command line app that allows you to search for songs, movies, and upcoming concerts. The application includes additional features to enhance user experience
 
 ## Demo
-[![Liri Demo](./assets/images/myliriproject.gif)](https://github.com/renovatio4ever/renovatio4ever.github.io/tree/master/Liri-Node-App)
+[![Liri Demo](./assets/images/myliriproject.gif =802x706)](https://github.com/renovatio4ever/renovatio4ever.github.io/tree/master/Liri-Node-App)
 
 ## Online Guide
 Before you take a journey with me through the wonderful world of coding this Node JS app, why don't you visit the website for a brief tutorial.
