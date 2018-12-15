@@ -1,141 +1,125 @@
-//Including the required npm packages
+require("dotenv").config();
 var mysql = require("mysql");
 var inquirer = require("inquirer");
+var Table = require('easy-table');
 
-// Creating the connection information for the sql database
 var connection = mysql.createConnection({
-	host: "localhost",
-	port: 3306,
-	user: "root",
-	password: "Pl4y0nlin3@",
-	database: "bamazon"
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_DATABASE
 });
 
-// Connecting to the mysql server and sql database
-connection.connect(function(err) {
-	if (err) throw err;
-	console.log("\n==== WELCOME TO BAMAZON CUSTOMER VIEW ====\n\nYou are now connected as id " + connection.threadId + "\n");
-	// Run the start function after the connection is made to begin the application
-	start();
-});
+function selectAllProducts() {
+    connection.query('select * from products', function (error, results, fields) {
+        if (error) throw error;
+     
+        var t = new Table;
+        results.forEach(function (product) {
+            t.cell('Item-ID', product.item_id)
+            t.cell('Product-Name', product.product_name)
+            t.cell('Department_Name', product.department_name)
+            t.cell('Price', product.price)
+            t.newRow()
+        })
 
-// Function that prompts the user
-function start() {
-	//Displaying all of the items available for sale.
-	console.log("These are all the products available on BAMAZON right now: \n");
-	connection.query("SELECT id, product_name, price FROM products", function(error, results) {
-		if (error) throw error;
-
-		// Log all results of the SELECT statement
-		console.log(JSON.stringify(results, null, " ") + "\n\n=========================================================\n\n");
-
-		// Prompt users with two messages:
-		inquirer
-			.prompt([
-				{
-					//Asking for ID of the product they would like to buy.
-					name: "idChosen",
-					type: "input",
-					message: "Please enter the ID number of the product you wish to purchase from BAMAZON: "
-				},
-				{
-					//Asking how many units of the product they would like to buy.
-					name: "unitsPurchased",
-					type: "input",
-					message: "How many units of this product would you like to purchase from BAMAZON?"
-				}
-		]).
-		then(function(answer) {
-			console.log("\nYOUR ORDER HAS BEEN PLACED!!!\n\nLet me check our stock for you...\n");
-
-			//Creating variables to hold the customer's choices:
-			var chosenProductID = answer.idChosen;
-			var chosenProductUnits = answer.unitsPurchased;
-
-			// If there is not enough quantities, return message
-			connection.query(
-				"SELECT * FROM products WHERE ?",
-				[
-					{
-						id: chosenProductID
-					}
-				],
-				function(error, results) {
-					if (error) throw error;
-
-					//This variable stores the current stock quantity of the Chosen product
-					var currentStock = results[0].stock_quantity;
-
-					if (chosenProductUnits > currentStock){
-						//If BAMAZON doesn't have enough stock
-						console.log("==== YOUR ORDER HAS BEEN CANCELLED DUE TO INSUFFICIENT QUANTITY ====\n");
-						//Calling the continue
-						continuePrompt();
-					} else {
-						// If BAMAZON does have enough of the product, fulfill the customer's order.
-						console.log("==== ITEMS ARE IN STOCK - YOUR ORDER HAS BEEN PROCESSED ====\n");
-
-						//set the total cost and information of the product selected
-						var id = results[0].id;
-						var productName = results[0].product_name;
-						var departmentName = results[0].department_name;
-						var price = results[0].price;
-						var originalStock = results[0].stock_quantity;
-						var totalCost = parseFloat(price * chosenProductUnits);
-
-						//Updating the SQL database to reflect the remaining quantity.
-						var newChosenProductStock = currentStock - chosenProductUnits;
-						connection.query(
-							"UPDATE products SET ? WHERE ?",
-							[
-								{
-									stock_quantity: newChosenProductStock
-								},
-								{
-									id: chosenProductID
-								}
-							],
-							function(error, results) {
-								//UPDATE SUCCESS!
-								console.log("Our product stock quantity of " + originalStock + " has been updated to " + newChosenProductStock + ".\n");
-
-								//Once the update goes through, show the customer the total cost of their purchase.
-								console.log(	"=====================================================================================" +
-												"\nItem number:\t\t\t" + id +
-												"\nProduct Name:\t\t\t" + productName +
-												"\nProduct Category:\t\t" + departmentName +
-												"\nPrice Per Unit:\t\t\t" + price +
-												"\nUnits ordered:\t\t\t" + chosenProductUnits +
-												"\n-------------------------------------------------" +
-												"\nYOUR TOTAL COST IS:\t\t$" + totalCost +
-												"\n=====================================================================================\n\n");
-
-								//Calling the continue
-								continuePrompt();
-							}
-						);
-					}
-			});
-		});
-	});
-}// End of start function
-
-//Function to ask the customer if they wish to continue with another purchase, or end
-function continuePrompt() {
-	inquirer
-	.prompt(
-		{
-			name: "continue",
-			type: "confirm",
-			message: "Would you like to purchase another product?",
-		}
-	)
-	.then(function(answer) {
-		if(answer.continue === true) {
-			start();
-		} else {
-			console.log(	"\n==== THANK YOU FOR SHOPPING WITH BAMAZON - GOODBYE ====\n\n");
-			connection.end();
-		}
-	});
+        console.log(t.toString())
+        runcustomerconsole();
+    })
 }
+
+var runInquirer = function () 
+{
+    inquirer.prompt([
+        {
+            name: "ID",
+            type: "input",
+            message: "what is the  ID of the product you would like to buy?",
+            validate: function (value) {
+                if (isNaN(value) === false) {
+                    return true;
+                }
+                return false;
+            }
+        },
+        {
+            name: "count",
+            type: "input",
+            message: "how many units of the product you would like to buy?",
+            validate: function (value) {
+                if (isNaN(value) === false) {
+                    return true;
+                }
+                return false;
+            }
+        }
+    ])
+        .then(function (answer) {
+                var count = answer.count;
+                var id = answer.ID;
+                connection.query("SELECT stock_quantity,price,product_sales FROM products WHERE item_id=?", [id], function (error, results, fields) {
+                var price=results[0].price;
+              
+                if (count > results[0].stock_quantity)
+                {
+                    console.log("Insufficient quantity!")
+                }
+                else
+                {
+                var totalPrice=price*count;
+                var oldProductSale=results[0].product_sales;
+                var newProductSale=oldProductSale+totalPrice;
+                var newQuantity = results[0].stock_quantity - Number(count);;
+                connection.query("update products set stock_quantity=? where item_id=?", [newQuantity, id], function (error, results, fields) {
+                if (error) throw error;
+                })
+              
+                connection.query("update products set product_sales=? where item_id=?", [newProductSale, id], function (error, results, fields) {
+                    if (error) throw error;
+                 })
+             
+                console.log("Total Price = "+totalPrice);
+                
+                }
+                console.log("waiting until list all product again....")
+                setTimeout(selectAllProducts,6000);
+
+            })
+        });
+}
+connection.connect(function (err) {
+    if (err) throw err;
+    console.log("connecting to database")
+
+    selectAllProducts();
+});
+
+
+var runcustomerconsole=function()
+   {
+    inquirer.prompt(
+        {
+            name: "action",
+            type: "list",
+            message: "What would you like to do?",
+            choices: [
+              "I would like to buy stuff",
+              "I changed my mind. Please log me off",
+            ]
+        }).then(function(answer){
+            switch(answer.action)
+            {
+                case "I would like to buy stuff":
+                runInquirer();
+                break;
+
+                case "I changed my mind. Please log me off":
+                console.clear();
+                console.log("Thank you for shopping with Bamazon. You have exited successfully");
+                process.exit();
+                break;
+            }
+        });
+            
+ }

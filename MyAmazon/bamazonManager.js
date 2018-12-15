@@ -1,246 +1,242 @@
-//Including the required npm packages
+require("dotenv").config();
 var mysql = require("mysql");
 var inquirer = require("inquirer");
+var Table = require('easy-table');
 
-// Creating the connection information for the sql database
 var connection = mysql.createConnection({
-	host: "localhost",
-	port: 3306,
-	user: "root",
-	password: "Pl4y0nlin3@",
-	database: "bamazon"
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_DATABASE
 });
 
-// Connecting to the mysql server and sql database
-connection.connect(function(err) {
-	if (err) throw err;
-	console.log("\n==== WELCOME TO BAMAZON MANAGER VIEW ====\n\nYou are now connected as id " + connection.threadId + "\n");
-	// Run the start function after the connection is made to begin the application
-	manager();
+
+connection.connect(function (err) {
+    if (err) throw err;
+    console.log("connecting to database")
+
+    runList()
 });
 
-//Function that prompts the manager
-function manager() {
-	//Begin a new query to the database
-	connection.query("SELECT * FROM products", function(error, results) {
-		if (error) throw error;
+var  viewProduct=function(){
 
-		//Begin prompt to manager for options:
-		inquirer
-			.prompt(
-				{
-					name: "managerPrompt",
-					type: "list",
-					message: "Please select one of the following Manager Options:",
-					choices: ["View Products for Sale", "View Low Inventory",  "Add to Inventory", "Add New Product"],
-					default: 0
-				}
-			)
-			.then(function(answer) {
-				// console.log("\n" + answer);
-				// console.log("\n" + answer.managerPrompt);
-				//Switch statement that performs different actions depending on user's choice
-				switch(answer.managerPrompt) {
+    connection.query('select * from products', function (error, results, fields) {
+        if (error) throw error;
+        
+        var t = new Table;
+        results.forEach(function (product) {
+            t.cell('Item-ID', product.item_id)
+            t.cell('Product-Name', product.product_name)
+            t.cell('Department_Name', product.department_name)
+            t.cell('Price', product.price)
+            t.cell('Inventory', product.stock_quantity)
+            t.newRow()
+        })
 
-					//If user chooses View Products for Sale
-					case "View Products for Sale":
-						console.log("\nYou have chosen to view all the products available for sale at BAMAZON");
-						viewProducts();
-						break;
+        console.log(t.toString())
 
-					//If user chooses View Low Inventory
-					case "View Low Inventory":
-						console.log("\nYou have chosen to view all the products with current low inventory");
-						viewLowInv();
-						break;
 
-					//If user chooses Add to Inventory
-					case "Add to Inventory":
-						console.log("\nYou have chosen to add more quantity of a product to our inventory");
-						addInventory();
-						break;
 
-					//If user chooses Add New Product
-					case "Add New Product":
-						console.log("\nYou have chosen to add a new product to our inventory");
-						addNewProduct();
-						break;
-
-					//If user chooses anything else
-					default:
-						console.log("\nPlease select one of the options provided");
-					}//End of switch statement
-			});//End of .then function
-	});//End of query
-}//End of manager function
-
-//Function that runs when the manager selects View Products for Sale
-function viewProducts() {
-	console.log("\nThese are all the products available on BAMAZON right now: \n");
-	connection.query("SELECT id, product_name, price, stock_quantity FROM products", function(error, results) {
-		if (error) throw error;
-		console.log(JSON.stringify(results, null, " ") + "\n\n=========================================================\n\n");
-
-		//Calling the continuePrompt() function
-		continuePrompt()
-	});//End of query
-}//End of viewProducts
-
-//Function that runs when the manager selects View Low Inventory
-function viewLowInv() {
-	console.log("\nThese are all the products with low inventory (below 5) on BAMAZON right now: \n");
-	connection.query("SELECT id, product_name, price, stock_quantity FROM products WHERE stock_quantity < 5", function(error, results) {
-		if (error) throw error;
-		//Show only rows with low inventory (below 5)
-		console.log(JSON.stringify(results, null, " ") + "\n\n=========================================================\n\n");
-
-		//Calling the continuePrompt() function
-		continuePrompt()
-	});//End of query
-}//End of viewLowInv
-
-//Function that runs when the manager selects Add to Inventory
-function addInventory() {
-		//Prompt manager how much of which product to add
-		inquirer
-			.prompt([
-				{
-					//Asking for ID of the product they would like to restock.
-					name: "id",
-					type: "input",
-					message: "Please enter the ID number of the product you wish to restock inventory on BAMAZON: "
-				},
-				{
-					//Asking how many units of the product they would like to restock.
-					name: "unitsToAdd",
-					type: "input",
-					message: "How many units of this product would you like to add to the inventory on BAMAZON?"
-				}
-			])
-			.then(function(answer) {
-				//Creating variables to hold the manager's choices:
-				var chosenProductID = answer.id;
-				var chosenUnitsToAdd = parseInt(answer.unitsToAdd);
-
-				//Creating a new query
-				connection.query("SELECT * FROM products WHERE id = " + chosenProductID, function(error, results) {
-					if (error) throw error;
-
-					//Capturing original values of the selected products
-					var id = results[0].id;
-					var productName = results[0].product_name;
-					var departmentName = results[0].department_name;
-					var price = results[0].price;
-					var originalStock = parseInt(results[0].stock_quantity);
-
-					var newProductStock = parseInt(originalStock + chosenUnitsToAdd);
-
-					//Update the database
-					connection.query(
-						"UPDATE products SET ? WHERE ?",
-						[
-							{
-								stock_quantity: newProductStock
-							},
-							{
-								id: id
-							}
-						],
-						function(error, results) {
-							if (error) throw error;
-
-							//SUCCESS!!
-							console.log(	"\n==== YOUR STOCK WAS ADDED SUCCESSFULLY ====" +
-											"\n=====================================================================================" +
-											"\nItem number:\t\t\t" + id +
-											"\nProduct Name:\t\t\t" + productName +
-											"\nProduct Category:\t\t" + departmentName +
-											"\nPrice Per Unit:\t\t\t" + price +
-											"\nOriginal Stock Quantity:\t" + originalStock +
-											"\nYou added more stock:\t\t" + chosenUnitsToAdd +
-											"\n-------------------------------------------------" +
-											"\nTHE NEW STOCK QUANTITY IS:\t" + newProductStock +
-											"\n=====================================================================================\n\n");
-
-						//Calling the continuePrompt() function
-						continuePrompt()
-						}
-					);//End of query
-				});//End of query
-			});//End of .then(function
-}//End of addInventory
-
-//Function that runs when the manager selects Add New Product
-function addNewProduct() {
-	//Prompt the manager for information on the new product
-	inquirer
-		.prompt([
-			{
-				name: "productName",
-				type: "input",
-				message: "What is the name of the new Product you wish to add?"
-			},
-			{
-				name: "productCategory",
-				type: "input",
-				message: "What is the category of the new Product you wish to add?"
-			},
-			{
-				name: "price",
-				type: "input",
-				message: "What is the price per unit of the new Product you wish to add? (Enter as 12.99)"
-			},
-			{
-				name: "stockQuantity",
-				type: "input",
-				message: "How many units of the new Product do you wish to add to the inventory? (Enter a whole number)"
-			}
-		])
-		.then(function(answer) {
-			//Establish a new query
-			connection.query(
-				"INSERT INTO products SET ?",
-				{
-					product_name: answer.productName,
-					department_name: answer.productCategory,
-					price: parseFloat(answer.price),
-					stock_quantity: parseInt(answer.stockQuantity)
-				},
-				function(error, results) {
-					if (error) throw error;
-					//SUCCESS!!!
-					console.log(	"\n==== YOUR NEW ITEM WAS ADDED SUCCESSFULLY ====" +
-									"\n==============================================" +
-									"\nProduct Name:\t\t\t" + answer.productName +
-									"\nProduct Category:\t\t" + answer.productCategory +
-									"\nPrice Per Unit:\t\t\t$" + parseFloat(answer.price) +
-									"\nStock Quantity:\t\t\t" + parseInt(answer.stockQuantity) +
-									"\n==============================================\n\n");
-
-				//Calling the continuePrompt() function
-				continuePrompt()
-				}
-			);//End of query
-		});//End of .then(function)
-}//End of addNewProduct
-
-//Function to ask the customer if they wish to continue with another purchase, or end
-function continuePrompt() {
-	inquirer
-	.prompt(
-		{
-			name: "continue",
-			type: "confirm",
-			message: "Would you like to view the Main Menu for Manager View again?",
-		}
-	)
-	.then(function(answer) {
-		if(answer.continue === true) {
-			manager();
-		} else {
-			console.log(	"\n==== THANK YOU - GOODBYE ====\n\n");
-			//END CONNECTION
-			connection.end();
-		}
-	});
+        runList();
+    })
 }
+
+var viewLowInventory=function(){
+
+    connection.query("SELECT * FROM products ", function (error, results, fields) {
+         var ifLowExist=false;
+        for(var x=0;x<results.length;x++)
+        {
+           var count = results[x].stock_quantity
+          
+        if (count <5)
+        {
+           ifLowExist=true;
+            console.log(`
+            items with an inventory count lower than five :
+            Item-ID = ${results[x].item_id} 
+            Product-Name = ${results[x].product_name}  
+            Department_Name = ${results[x].department_name} 
+            Price = ${results[x].price}   
+            Inventory = ${results[x].stock_quantity} 
+            `)
+        }
+        
+    }  
+     if(!ifLowExist)
+        {
+            console.log("................................")
+            console.log("There is no low inventory , All Products Inventory are > 5 ")
+            console.log("................................")
+        }
+    runList();
+    })
+}
+
+var selectId=function(id){
+    connection.query("SELECT * FROM products WHERE item_id=?", [id], function (error, results, fields) {
+        console.log(`
+            items that you added to : 
+            Item-ID = ${results[0].item_id} 
+            Product-Name = ${results[0].product_name}  
+            Department_Name = ${results[0].department_name} 
+            Price = ${results[0].price}   
+            Inventory = ${results[0].stock_quantity} 
+            `)
+
+
+          runList();    
+    })
+  
+
+}
+
+var insert=function(name,price,department,count){
+
+    connection.query("INSERT INTO products(product_name,department_name,price,stock_quantity)VALUES(?,?,?,?)", [name,department,price,count], function (error, results, fields) {
+        if (error) throw error;})
+ console.log("\n You have successfully added the item \n")
+runList();
+}
+
+
+var  addNewProduct=function(){
+
+    inquirer.prompt([
+        {
+            name: "product",
+            type: "input",
+            message: "what is the  name of the product you would like to add ?",
+           
+        },
+        {
+            name: "department",
+            type: "input",
+            message: "what is the  name of the department ?",
+           
+        },
+
+        {
+            name: "price",
+            type: "input",
+            message: "what is the price of the product?",
+            validate: function (value) {
+                if (isNaN(value) === false) {
+                    return true;
+                }
+                return false;
+            }
+           
+        },
+        {
+            name: "count",
+            type: "input",
+            message: "how many units of the product you would like to add?",
+            validate: function (value) {
+                if (isNaN(value) === false) {
+                    return true;
+                }
+                return false;
+            }
+        }
+
+    ])
+    .then(function(answer){
+      var name=answer.product;
+      var price=answer.price;
+      var department=answer.department;
+      var count=answer.count;
+
+      insert(name,price,department,count);
+
+    })
+
+}
+
+var addToInventory = function()
+{
+    inquirer.prompt([
+        {
+            name: "ID",
+            type: "input",
+            message: "what is the  ID of the product you would like to add more?",
+            validate: function (value) {
+                if (isNaN(value) === false) {
+                    return true;
+                }
+                return false;
+            }
+        },
+        {
+            name: "count",
+            type: "input",
+            message: "how many units of the product you would like to add?",
+            validate: function (value) {
+                if (isNaN(value) === false) {
+                    return true;
+                }
+                return false;
+            }
+        }
+    ])
+    .then(function (answer) {
+        var count = answer.count;
+        var id = answer.ID;
+
+        connection.query("SELECT stock_quantity FROM products WHERE item_id=?", [id], function (error, results, fields) {
+         
+            var newQuantity = results[0].stock_quantity +Number(count);
+            connection.query("update products set stock_quantity=? where item_id=?", [newQuantity, id], function (error, results, fields) {
+            if (error) throw error;
+            })
+    })
+    console.log("\n you have successfuly increase the inventory for the item \n " );
+    runList();
+   //selectId(id);
+    
+    })
+}
+
+   var runList=function()
+   {
+    inquirer.prompt(
+        {
+            name: "action",
+            type: "list",
+            message: "What would you like to do?",
+            choices: [
+              "View Products for Sale",
+              "View Low Inventory",
+              "Add to Inventory",
+              "Add New Product",
+              "Exit Manager Console"
+            ]
+        }).then(function(answer){
+            switch(answer.action)
+            {
+                case "View Products for Sale":
+                viewProduct();
+                break;
+
+                case "View Low Inventory":
+                viewLowInventory();
+                break;
+
+                case "Add to Inventory":
+                addToInventory();
+                break;
+
+                case "Add New Product":
+                addNewProduct();
+                break;
+
+                case "Exit Manager Console":
+                console.clear();
+                console.log("You have exited successfully");
+                process.exit();
+                break;
+            }
+        });
+            
+ }
