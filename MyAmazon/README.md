@@ -9,7 +9,7 @@ Amazon-like storefront application using Node.js and MySQL. It presents three in
 You can  watch the demo of the Bamazon customer,manager, and supervisor interfaces at the link below. 
 
 ## **NPM Packages Used :**
-mysql, inquirer, easy-table
+mysql, inquirer, easy-table, dot-env, and colors npm packages
 
 ## **MySQL Database Setup**
 To run this application, you need to setup MySQL database  on your machine. then you will need to create bamazon database and both products and departments table with the SQL code found in bamazon.sql. Run this code inside your MySQL client then you will be ready to proceed with running the bamazon customer, manager and suoervisor interfaces.
