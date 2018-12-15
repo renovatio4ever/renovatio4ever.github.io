@@ -45,4 +45,4 @@ This is a demo of the Customer console. Customers can purchase items by number o
 ## **MySQL Console**
 This is a quick view of the actual mySQL table containing the 
 
-[![Manager Console Demo](./assets/images/howto_manager.gif)](https://renovatio4ever.github.io/MyAmazon/)
+[![mySQL Bamazon Administration](./assets/images/howto_bamazonsql.gif)](https://renovatio4ever.github.io/MyAmazon/)
