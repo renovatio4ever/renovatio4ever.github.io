@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Latest compiled Bootstraap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron" align="center">
+            <h1><span class = "glyphicon glyphicon-th-list"></span> Survey</h1>
+            <hr>
+            <h2>Answer the questions below to find a bestie!</h2>
+            <br>
+            <p><a class="btn btn-primary btn-lg" href="home.html" role="button"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></p>
+        </div>
+        <hr>
+        <div class="row">
+
+            <div class="col-lg-12">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>About Me</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <form method="POST" role="form">
+
+                            <div class="form-group">
+                                <label for="name">Name (Required)</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="role">Link to Photo Image (Required)</label>
+                                <input type="text" class="form-control" id="photo">
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-12">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Survey Questions</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <form method="POST" role="form">
+
+                            <h4>Question 1</h4>
+                            <h5>Your mind is always buzzing with unexplored ideas and plans.</h5>
+                            <select class="chosen-select" id="q1">
+                            <option value="select">Select an Option</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                          </select>
+                            <hr>
+                            <h4>Question 2</h4>
+                            <h5>Generally speaking, you rely more on your experience than your imagination.</h5>
+                            <select class="chosen-select" id="q2">
+                            <option value="select">Select an Option</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                          </select>
+                            <hr>
+                            <h4>Question 3</h4>
+                            <h5>You find it easy to stay relaxed and focused even when there is some pressure.</h5>
+                            <select class="chosen-select" id="q3">
+                            <option value="select">Select an Option</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                          </select>
+                            <hr>
+                            <h4>Question 4</h4>
+                            <h5>You rarely do something just out of sheer curiosity.</h5>
+                            <select class="chosen-select" id="q4">
+                            <option value="select">Select an Option</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                          </select>
+                            <hr>
+                            <h4>Question 5</h4>
+                            <h5>People can rarely upset you.</h5>
+                            <select class="chosen-select" id="q5">
+                            <option value="select">Select an Option</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                          </select>
+                            <hr>
+                            <h4>Question 6</h4>
+                            <h5>It is often difficult for you to relate to other people’s feelings.</h5>
+                            <select class="chosen-select" id="q6">
+                            <option value="select">Select an Option</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                          </select>
+                            <hr>
+                            <h4>Question 7</h4>
+                            <h5>In a discussion, truth should be more important than people’s sensitivities.</h5>
+                            <select class="chosen-select" id="q7">
+                            <option value="select">Select an Option</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                          </select>
+                            <hr>
+                            <h4>Question 8</h4>
+                            <h5>You rarely get carried away by fantasies and ideas.</h5>
+                            <select class="chosen-select" id="q8">
+                            <option value="select">Select an Option</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                          </select>
+                            <hr>
+                            <h4>Question 9</h4>
+                            <h5>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h5>
+                            <select class="chosen-select" id="q9">
+                            <option value="select">Select an Option</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                          </select>
+                            <hr>
+                            <h4>Question 10</h4>
+                            <h5>You feel more energetic after spending time with a group of people.</h5>
+                            <select class="chosen-select" id="q10">
+                            <option value="select">Select an Option</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                          </select>
+                        </form>
+                        <br>
+                        <button type="submit" class="btn btn-primary btn-md" id="add-btn"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p><a href="/api/friends">API Friends List</a> | <a href="https://renovatio4ever.github.io/FriendFinder/">GitHub Repo</a></p>
+    </div>
+
+    <!--modal-->
+    <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <div class="caption" align="center">Your new bestie is ... </div>
+                    <img src="" id="imagepreview" height=80% width=80%>
+                    <div class="caption" id="caption" align="center"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script type="text/javascript">
+        $("#add-btn").on("click", function() {
+            event.preventDefault();
+            var newFriend = {
+                name: $("#name").val().trim(),
+                photo: $("#photo").val().trim(),
+                scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val() ]
+            };
+
+            // alerts are insepid, best to use modals
+
+            alert("Searching for your match...");
+
+            // modal end
+
+            $.post("/api/new", newFriend)
+                .done(function(data) {
+                    console.log(data);
+                    $('#caption').text(data.name);
+                    $('#imagepreview').attr('src', data.photo);
+                    $('#imagemodal').modal('show');
+                });
+            $("#name").val("");
+            $("#photo").val("");
+            [$("#q1").val(""), $("#q2").val(""), $("#q3").val(""), $("#q4").val(""), $("#q5").val(""), $("#q6").val(""), $("#q7").val(""), $("#q8").val(""), $("#q9").val(""), $("#q10").val("") ]
+        });
+    </script>
+</body>
+
+</html>
