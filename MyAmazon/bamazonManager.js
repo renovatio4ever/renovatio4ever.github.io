@@ -1,3 +1,8 @@
+// Author: Peter Santiago
+// Date: 12.15.2018
+// Purpose: Bamazon Exercise
+//Features: This code was built on Node JS, JS, mySQL
+
 require("dotenv").config();
 var mysql = require("mysql");
 var inquirer = require("inquirer");
@@ -18,6 +23,8 @@ connection.connect(function (err) {
 
     runList()
 });
+
+// View product list
 
 var  viewProduct=function(){
 
@@ -41,6 +48,8 @@ var  viewProduct=function(){
         runList();
     })
 }
+
+// Query low inventory
 
 var viewLowInventory=function(){
 
@@ -100,6 +109,7 @@ var insert=function(name,price,department,count){
 runList();
 }
 
+// Add a new product
 
 var  addNewProduct=function(){
 
@@ -154,6 +164,8 @@ var  addNewProduct=function(){
 
 }
 
+// Add to inventory
+
 var addToInventory = function()
 {
     inquirer.prompt([
@@ -197,6 +209,8 @@ var addToInventory = function()
     
     })
 }
+
+// Run user menu
 
    var runList=function()
    {

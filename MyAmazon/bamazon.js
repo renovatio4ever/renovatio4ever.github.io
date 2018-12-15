@@ -1,3 +1,8 @@
+// Author: Peter Santiago
+// Date: 12.15.2018
+// Purpose: Bamazon Exercise
+//Features: This code was built on Node JS, JS, mySQL
+
 var figlet = require("figlet");
 var inquirer = require("inquirer");
 var colors = require("colors");

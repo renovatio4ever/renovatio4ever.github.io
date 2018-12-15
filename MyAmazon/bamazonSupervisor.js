@@ -1,8 +1,14 @@
+// Author: Peter Santiago
+// Date: 12.15.2018
+// Purpose: Bamazon Exercise
+//Features: This code was built on Node JS, JS, mySQL
+
 require("dotenv").config();
 var mysql = require("mysql");
 var inquirer = require("inquirer");
 var Table = require('easy-table');
 
+// Connection to DB
 var connection = mysql.createConnection({
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
@@ -16,6 +22,8 @@ connection.connect(function (err) {
     console.log("connecting to database")
     runOptions()
 });
+
+// Query Sales from DB
 
 var viewProductSales = function () {
     var sqlQuery = "SELECT departments.department_id,departments.department_name,over_head_costs,  SUM(products.product_sales) AS product_sales , over_head_costs-SUM(products.product_sales) AS total_profit";
@@ -37,6 +45,8 @@ var viewProductSales = function () {
     })
 }
 
+// Add Department
+
 var insertToDepartment = function (name, cost) {
     connection.query("INSERT INTO departments(department_name,over_head_costs)VALUES(?,?)", [name, cost], function (error, results, fields) {
         if (error) throw error;
@@ -44,6 +54,8 @@ var insertToDepartment = function (name, cost) {
     console.log("\n You have successfully added the department\n")
     runOptions();
 }
+
+// User Menu
 
 var runOptions = function () {
     inquirer.prompt(
@@ -75,6 +87,8 @@ var runOptions = function () {
             }
         });
 }
+
+// Create New Department
 
 var createNewDepartment = function () {
     inquirer.prompt([
