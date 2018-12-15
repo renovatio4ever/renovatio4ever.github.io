@@ -43,6 +43,6 @@ This is a demo of the Customer console. Customers can purchase items by number o
 [![Customer Console Demo](./assets/images/howto_customer.gif)](https://renovatio4ever.github.io/MyAmazon/)
 
 ## **MySQL Console**
-This is a quick view of the actual mySQL table containing the 
+This is a quick view of the actual mySQL table containing the contents of bamazon called by node JS.
 
 [![mySQL Bamazon Administration](./assets/images/howto_bamazonsql.gif)](https://renovatio4ever.github.io/MyAmazon/)
