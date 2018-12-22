@@ -10,9 +10,7 @@ will then display the name and picture of the user with the best overall match.
 
 ### Preview Site
 
-
 https://psupennfriendfinder.herokuapp.com/
-
 
 ### Getting Started
 
@@ -20,17 +18,12 @@ https://psupennfriendfinder.herokuapp.com/
 To get started on this project, follow the installations instructions below.
 ```
 
-
 ### Installations
 ``` Installing
 
-Before you contribute
-
-Make sure you install all the dependencies you need for the project
-Once you have Node.js installed on your computer
-Navigate to the working directory and do the following in your terminal
-
-Before you proceed, make sure you fork the repo
+- Make sure you install all the dependencies you need for the project
+- Once you have Node.js installed on your computer
+- Navigate to the working directory and do the following in your terminal
 
 ###### Step 1
 > npm install
@@ -56,12 +49,9 @@ The above command will start the server for you
 
 If you see "App listening on PORT 8080" in your CLI, then you're good to go :thumbsup:!
 
-Happy Contributing!
-
 ```
 
-
-### Built With
+### Technologies Used
 
 ```
 * Node.JS
@@ -71,17 +61,6 @@ Happy Contributing!
 * Bootstrap
 * HTML
 * CSS
-
 ```
 
-### Contributing
 
-```
-There are different ways to contribute
-* Front End
-* Back End
-* Designers
-* Genius Idea's
-* Unit Testers
-* etc.
-```
