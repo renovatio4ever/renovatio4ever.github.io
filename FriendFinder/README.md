@@ -8,9 +8,13 @@ take in results your users' surveys, then compare their answers with those from 
 will then display the name and picture of the user with the best overall match.
  ```
 
-### Preview Site
+### Github Repository
 
-https://psupennfriendfinder.herokuapp.com/
+[Github Site](https://github.com/renovatio4ever/renovatio4ever.github.io/tree/master/FriendFinder)
+
+### Live Heroku Site
+
+[![Heroku Friend Finder Application](http://i67.tinypic.com/2zz2lh2.jpg)](https://psupennfriendfinder.herokuapp.com/)
 
 ### Getting Started
 
