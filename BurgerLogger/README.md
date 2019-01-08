@@ -4,11 +4,11 @@ Eat-Mah-Burger is a simple data (hamburger) logger built on express, and mySQL. 
 
 ### Selfie of Eat Mah Burger
 
-[Eat Mah Burgers](http://i64.tinypic.com/m7vzow.jpg)
+[![Eat Mah Burgers](http://i64.tinypic.com/m7vzow.jpg)](https://github.com/renovatio4ever/renovatio4ever.github.io/tree/master/BurgerLogger/)
 
 ### Not convinced? Queue in the video
 
-[Eat Mah Burgers The Movie - Rated: Delicious](https://i.ibb.co/m8776qZ/Mah-Burger-Video.gif)
+[![Eat Mah Burgers The Movie - Rated: Delicious](https://i.ibb.co/m8776qZ/Mah-Burger-Video.gif)](https://github.com/renovatio4ever/renovatio4ever.github.io/tree/master/BurgerLogger/)
 
 ### Github Repository
 
@@ -131,7 +131,7 @@ Optional Packages
 
 ###### Step 3: Create a home for our burgers. The Database.
 
-[The Burger Database](http://i64.tinypic.com/t9ie0h.jpg)
+[![The Burger Database](http://i64.tinypic.com/t9ie0h.jpg)](https://github.com/renovatio4ever/renovatio4ever.github.io/tree/master/BurgerLogger/)
 
 - Launch mySQL IDE and execute the SQL statements in the db folder
 - The script will create the DB, and seed the DB with content
@@ -159,7 +159,7 @@ Note: Custom DB ports will need to be added.
 
 ### The User Manual. We welcome all burgers!
 
-[Eat Mah Burgers](http://i68.tinypic.com/2zsa3j5.jpg)
+[![How does he do it?](http://i68.tinypic.com/2zsa3j5.jpg)](https://github.com/renovatio4ever/renovatio4ever.github.io/tree/master/BurgerLogger/)
 
 ```
 1. Enter in a funky burger from the deepest dream state
