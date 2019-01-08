@@ -111,11 +111,11 @@ This application leverages the following technologies
 
 ### Installation the burger application
 
-The following are step for installing and configuring the burger applications
+The following are the steps required for installing and configuring the totally awesome burger application.
 
 ###### Step 1: Clone the repository
 
-- visit github and execute a clone of the repository
+- visit github and execute a clone of the "burgerlogger" repository
 - git clone https://github.com/renovatio4ever/renovatio4ever.github.io/tree/master/BurgerLogger
 
 ###### Step 2: Install the required npm packages
