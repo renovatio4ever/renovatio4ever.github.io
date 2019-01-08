@@ -8,7 +8,7 @@ Eat-Mah-Burger is a simple data (hamburger) logger built on express, and mySQL. 
 
 ### Not convinced? Queue in the video
 
-[![Eat Mah Burgers The Movie - Rated: Delicious](https://i.ibb.co/m8776qZ/Mah-Burger-Video.gif)](https://github.com/renovatio4ever/renovatio4ever.github.io/tree/master/BurgerLogger/)
+[![Eat Mah Burgers The Movie - Rated: Delicious](./assets/img/mahburgervid.gif)]
 
 ### Github Repository
 
@@ -121,13 +121,13 @@ The following are step for installing and configuring the burger applications
 ###### Step 2: Install the required npm packages
 
 - Launch VSC IDE and install the following packages
-> "npm i express" (Web Servlette)
-> "npm i mysql2" (Data)
-> "npm i express-handlebars" (Views)
+- "npm i express" (Web Servlette)
+- "npm i mysql2" (Data)
+- "npm i express-handlebars" (Views)
 
 Optional Packages
 
-> "npm i method-override" (logic for DB loader)
+- "npm i method-override" (logic for DB loader)
 
 ###### Step 3: Create a home for our burgers. The Database.
 
