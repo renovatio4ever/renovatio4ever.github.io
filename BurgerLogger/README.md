@@ -107,6 +107,8 @@ This application leverages the following technologies
 * HTML
 * CSS
 * MySQL
+* Handlebars
+* MVC/ORM
 ```
 
 ### Installation the burger application
