@@ -8,7 +8,7 @@ Eat-Mah-Burger is a simple data (hamburger) logger built on express, and mySQL. 
 
 ### Not convinced? Queue in the video
 
-[![Eat Mah Burgers The Movie - Rated: Delicious](./assets/img/mahburgervid.gif)]
+[![Eat Mah Burgers The Movie - Rated: Delicious](./public/assets/img/mahburgervid.gif)](https://github.com/renovatio4ever/renovatio4ever.github.io/tree/master/BurgerLogger)
 
 ### Github Repository
 
