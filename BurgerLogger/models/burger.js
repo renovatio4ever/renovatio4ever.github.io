@@ -1,6 +1,8 @@
 // Import the ORM to create functions that will interact with the database.
 var orm = require("../config/orm.js");
 
+// Function ORM Object. Site will list, create or update the burger flag
+
 var burger = {
     all: function(cb) {
         orm.all("burgers", function(result) {

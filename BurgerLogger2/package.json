@@ -1,0 +1,18 @@
+{
+  "name": "burgerlogger",
+  "version": "1.0.0",
+  "description": "In this assignment, I'll create a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM (yum!).",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^3.0.0",
+    "mysql2": "^1.6.4"
+  }
+}

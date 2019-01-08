@@ -22,6 +22,8 @@ function objToSql(ob) {
   return arr.toString();
 };
 
+// Selects and presents all of the burgers in Valhalla..err I mean by database
+
 var orm = {
   all: function(tableInput, cb) {
     var queryString = "SELECT * FROM " + tableInput + ";";
@@ -30,6 +32,9 @@ var orm = {
       cb(result);
     });
   },
+
+// Adds a (hopefully) delicious burger to the database
+
   create: function(table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
 
@@ -49,6 +54,9 @@ var orm = {
       cb(result);
     });
   },
+
+  // Updates the burger flag in the database
+
   update: function(table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
 

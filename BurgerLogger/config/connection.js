@@ -1,6 +1,9 @@
+// ..because mysql2 performs better
 var mysql = require("mysql2");
 
 var connection;
+
+// If I decide to promote to Heroku it will leverage Jaws DB
 
 if (process.env.JAWSDB_URL) {
 	connection = mysql.createConnection(process.env.JAWSDB_URL);
