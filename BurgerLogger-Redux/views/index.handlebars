@@ -1,0 +1,71 @@
+<div class="container" id="container">
+    <div class="jumbotron" id="header">
+    <h1 id="eat"><strong>Eat-Mah-Burger!</strong></h1>
+        <img src="/assets/img/burger3.png" id="burger">
+    </div>
+
+
+     <div class="row">
+        <div class="col-sm-12">
+            <form class="create-update-form" action="/" method="POST">
+
+			<div class="form-group" id="add">
+                    <h3 class="title">Burgers from across the <u>UNIVERSE</u>. Add your creation here:</h3>
+                 			<br>
+				<div class="form-group col-sm-8" style="overflow: hidden; padding-right: .5em;">
+					<textarea id="box" class="form-control input-lg" type="text" name="name" rows="3" style="width: 100%;"></textarea>
+				</div>
+				<div class="col-sm-2">
+					<button type="submit" id="order" class="bt btn-default btn-lg" style="float: right">Order Up!</button>
+				</div>
+		</div>
+		</form>
+        </div>
+    </div>
+   <div>
+   <br>
+   <hr id="line">
+		<div class="col-sm-4" id="yum">
+			<div class="panel-panel default">
+			<h3 class="title">Consume thine creations:</h3>
+				<ul class="list-group">
+				{{#each burger}}
+					{{#unless this.devoured}}
+					<li class="list-group-item">
+						<div class="input-group">
+							<p class="lead"> {{this.burger_name}} </p>
+							<span class="input-group-btn">
+								<form action="burgers/{{this.id}}?_method=PUT" method="POST">
+									<input type="hidden" name="devoured" value="true">
+									<button id="button" class="btn btn-default btn-lg" type="submit">Devour Me!</button>
+								</form>
+							</span>
+						</div>
+					</li>
+					{{/unless}}
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+</div>
+<div>
+		<div class="col-sm-4" id="devoured">
+		<h3 id="heaven" class="valhalla">The eaten shall enter Valhalla:</h3>
+			<div class="panel panel-default">
+				<ul class="list-group">
+				{{#each burger}}
+					{{#if this.devoured}}
+					<li class="list-group-item">
+						<p class="lead">{{this.burger_name}} </p>
+					</li>
+					{{/if}}
+				{{/each}}
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="footer" align="left">
+  <p>Eat-Mah-Burger &copy;2019 Renovatio4ever <a href="https://github.com/renovatio4ever/renovatio4ever.github.io/tree/master/BurgerLogger-Sequelized/">Github</a></p>
+</div>

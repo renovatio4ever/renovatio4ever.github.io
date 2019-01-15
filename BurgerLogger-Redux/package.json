@@ -1,0 +1,27 @@
+{
+  "name": "sequelized_burger",
+  "version": "1.0.0",
+  "description": "In this assignment, I'm going to Sequelize the Burger app I made last week.",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lexluther2125/sequelizedBurger.git"
+  },
+  "author": "Lexi Majoue",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lexluther2125/sequelizedBurger/issues"
+  },
+  "homepage": "https://github.com/lexluther2125/sequelizedBurger#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.9",
+    "mysql": "^2.14.1",
+    "mysql2": "^1.4.0",
+    "sequelize": "^4.4.2"
+  }
+}
