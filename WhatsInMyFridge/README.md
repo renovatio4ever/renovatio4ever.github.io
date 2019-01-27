@@ -137,7 +137,6 @@ Sequelize is an ORM specifically for node.js. It makes relating to database obje
 
 This application leverages the following technologies
 
-```
 +-------------+---------------------------+
 | Technology  |      Used In Project      |
 +-------------+---------------------------+
@@ -154,7 +153,6 @@ This application leverages the following technologies
 | Sequelize   | Server Side SQL Query     |
 | D3          | Reporting                 |
 +-------------+---------------------------+
-```
 
 ### D3 Documentation Technology & Reporting
 
@@ -184,8 +182,6 @@ The following are the steps required for installing and configuring the totally 
 - git clone https://github.com/nehasahay/Project2.git
 
 ###### Step 2: Install the required npm packages
-
-- Launch VSC IDE and run "npm i" to install the following packages
 
 +-----------------+--------------------+-----------------------------+
 |     Package     |      Version       |           Purpose           |
