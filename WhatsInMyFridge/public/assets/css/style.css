@@ -1,0 +1,156 @@
+body {
+    background-color: #ffffff;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    
+}
+
+html { 
+    background: url(http://imagizer.imageshack.us/a/img922/5014/QPwzmN.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+ 
+
+/* #funky{
+    font-size: 16px;
+    align-items: center;
+    width: 1100px;
+    height: 400px;
+    margin:0 auto;
+    background-color: #ffffff00;
+} */
+
+#dashboard{
+    font-size: 16px;
+    align-items: center;
+    width: 1100px;
+    height: 450px;
+    margin:0 auto;
+    background-color: #ffffff;
+}
+
+path {
+    stroke: #fff;
+}
+
+path:hover {
+    opacity: 0.9;
+}
+
+rect:hover {
+    fill: blue;
+}
+
+.axis {
+    font: 10px sans-serif;
+}
+
+.legend tr {
+    border-bottom: 1px solid grey;
+}
+
+.legend tr:first-child {
+    border-top: 1px solid grey;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.x.axis path {
+    display: none;
+}
+
+.legend {
+    margin-bottom: 76px;
+    display: inline-block;
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+
+.legend td {
+    padding: 4px 5px;
+    vertical-align: bottom;
+}
+
+.legendFreq,
+.legendPerc {
+    align: right;
+    width: 50px;
+}
+
+/* Super Style */
+
+
+#eat {
+    text-align: center;
+    color: black;
+    background-color: white;
+}
+
+.title {
+    color: white;
+    margin-bottom: 15px;
+    text-align: center;
+    text-indent: 7px;
+}
+
+#header {
+    width: 1000px;
+    margin-left: 62px;
+    padding: 0px;
+    margin-top: 15px;
+    background-color: white;
+
+}
+
+#line {
+    width: 1000px;
+}
+
+#box {
+    height: 50px;
+    width: 800px;
+    margin-left: 150px;
+}
+
+#order {
+    margin-left: 150px;
+    height: 50px;
+    width: 155px;
+    color: white;
+    background-color: #a70e12;
+}
+
+.giphy-embed {
+    margin-left: 480px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#button {
+    color: white;
+    background-color: #a70e12;
+    margin-left: 0px;
+    height: 50px;
+    width: 155px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(2, 1, 1);
+    color: rgb(202, 222, 255);
+    text-align: left;
+    font-size: 20px;
+}

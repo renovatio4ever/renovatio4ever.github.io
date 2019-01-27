@@ -1,0 +1,16 @@
+extends layout
+
+block scripts
+    script(src="js/index.js")
+
+block content
+    form(action="/search" method="GET")
+        .row
+            .col.s11
+                .input-field
+                    input#searchInput(type="search" name="recipeSearch" placeholder="e.g., kale salad, bean soup, chocolate")
+                    label(for="searchInput") Search
+            .col.s1
+                .input-field
+                    button.btn.prefix.light-blue.lighten-1(type="submit")
+                        i.material-icons search
