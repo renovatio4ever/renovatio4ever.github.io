@@ -29,7 +29,7 @@ What’s in your fridge is a simple application that exposes the joys of cooking
 
 ### What?! Not convinced? Queue in the video!
 
-[![What's in your fridge](http://imagizer.imageshack.us/a/img922/6554/LrqEv6.gif)](https://github.com/nehasahay/Project2)
+[![What's in your fridge](https://imageshack.com/a/img923/9364/GG3ktw.gif)](https://github.com/nehasahay/Project2)
 
 ### Github Repository
 
