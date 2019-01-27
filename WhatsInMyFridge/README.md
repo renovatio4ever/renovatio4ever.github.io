@@ -27,6 +27,10 @@ What’s in your fridge is a simple application that exposes the joys of cooking
 
 [![What's in your fridge](https://imageshack.com/a/img924/7430/CYQUMC.jpg)](https://whatsinyourfridge.herokuapp.com/)
 
+### Still Need Proof? Queue In the Video
+
+[![What's In Your Fridge](https://imageshack.com/a/img923/9364/GG3ktw.gif)](https://whatsinyourfridge.herokuapp.com/)
+
 ### Github Repository
 
 [Github Site](https://github.com/nehasahay/Project2)
