@@ -137,22 +137,19 @@ Sequelize is an ORM specifically for node.js. It makes relating to database obje
 
 This application leverages the following technologies
 
-+-------------+---------------------------+
-| Technology  |      Used In Project      |
-+-------------+---------------------------+
-| PassportJS  | User Authentication       |
-| PugJS       | App Front End Scaffolding |
-| Node.JS     | Server Side App           |
-| Express     | DB                        |
-| Materialize | Authentication Form       |
-| Bootstrap   | Overall App FE Design     |
-| HTML        | Base App FE code          |
-| CSS3        | App Style                 |
-| MySQL       | Local Test Database       |
-| JawsDB      | Production Database       |
-| Sequelize   | Server Side SQL Query     |
-| D3          | Reporting                 |
-+-------------+---------------------------+
+- PassportJS  | User Authentication       
+- PugJS       | App Front End Scaffolding 
+- Node.JS     | Server Side App           
+- Express     | DB                        
+- Materialize | Authentication Form       
+- Bootstrap   | Overall App FE Design     
+- HTML        | Base App FE code          
+- CSS3        | App Style                 
+- MySQL       | Local Test Database       
+- JawsDB      | Production Database       
+- Sequelize   | Server Side SQL Query     
+- D3          | Reporting                 
+
 
 ### D3 Documentation Technology & Reporting
 
@@ -183,23 +180,21 @@ The following are the steps required for installing and configuring the totally 
 
 ###### Step 2: Install the required npm packages
 
-+-----------------+--------------------+-----------------------------+
-|     Package     |      Version       |           Purpose           |
-+-----------------+--------------------+-----------------------------+
-| axios           | 0.18.0             | DB Transaction              |
-| bcrypt-nodejs   | 0.0.3              | User Authentication         |
-| chai            | 4.2.0              | Continuous Integration      |
-| dotenv          | 6.2.0              | Obfuscate Credentials       |
-| express         | 4.16.2             | Server Side                 |
-| express-session | 1.15.6 Server Side |                             |
-| mocha           | 5.2.0              | Continuous Integration      |
-| mysql2          | 1.5.1              | Local SQL Database          |
-| passport        | 0.4.0              | User Authentication         |
-| passport-local  | 1.0.0              | User Authentication (Local) |
-| path            | 0.12.7             | File Directory              |
-| pug             | 2.0.3              | Application Scaffolding     |
-| sequelize       | 4.22.15            | SQL-Less DB Transactions    |
-+-----------------+--------------------+-----------------------------+
+- npm i "package"
+- axios           | 0.18.0
+- bcrypt-nodejs   | 0.0.3 
+- chai            | 4.2.0 
+- dotenv          | 6.2.0 
+- express         | 4.16.2
+- express-session | 1.15.6
+- mocha           | 5.2.0 
+- mysql2          | 1.5.1 
+- passport        | 0.4.0 
+- passport-local  | 1.0.0 
+- path            | 0.12.7
+- pug             | 2.0.3 
+- sequelize       | 4.22.15
+
 
 ###### Step 3: Create the user and pairing database
 
