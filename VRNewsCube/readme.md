@@ -93,7 +93,7 @@ TBD
 TBD
 ```
 
-This application leverages the D3 dashboard library to create a simple interactive report of the top 10 ingredients found in the refridgerator
+
 
 ```
 TBD
