@@ -1,6 +1,4 @@
 // Front-end JS code for homework solution
-// =======================================
-
 // when the document is ready
 $(document).ready(function() {
 
