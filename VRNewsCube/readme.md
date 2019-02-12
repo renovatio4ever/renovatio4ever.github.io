@@ -12,11 +12,11 @@ VR News cube is a simple scraper application that scrapes the news (via the Chee
 
 ### Application Selfie
 
-[![VR News Info Cube](https://imageshack.com/a/img923/7434/R9oSXT.jpg)](https://github.com/renovatio4ever/renovatio4ever.github.io/tree/master/VRnews)
+[![VR News Info Cube](https://imageshack.com/a/img923/7434/R9oSXT.jpg)](https://github.com/renovatio4ever/renovatio4ever.github.io/tree/master/VRNewsCube)
 
 ### What?! Not convinced? Queue in the video!
 
-[![VR News Info Cube](https://media.giphy.com/media/1dLj1grT2UIFRnBTkZ/giphy.gif)](https://nanovrnewscube.herokuapp.com/)
+[![VR News Info Cube](https://media.giphy.com/media/1dLj1grT2UIFRnBTkZ/giphy.gif =1200x900)](https://nanovrnewscube.herokuapp.com/)
 
 ### Quick start guide
 
@@ -35,7 +35,7 @@ The application was designed implementing the following technologies and approac
 
 - Cheerio: (https://www.npmjs.com/package/cheerio) An npm scraper that allows the user to define segments of html to capture and store as a variable or actual string in a database. In this case Cheerio was used to capture (or scrape) news from the NY Times API, and store into a database
 
-[![mLab MongoDB](https://imageshack.com/a/img924/1865/uqsOT9.png)](https://3dtransforms.desandro.com/cube)
+[![mLab MongoDB](https://imageshack.com/a/img924/1865/uqsOT9.png)](https://mlab.com/)
 
 - MongoDB: (A free form (no-SQL) database that allows us to store data in BSON (JSON equivalent) format. The advantage of this is that any data can be stored as a JSON object only to be called again in an application. In this case I read the records of scraped articles and use it to populate my Cube.
 
