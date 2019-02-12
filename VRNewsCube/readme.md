@@ -16,7 +16,7 @@ VR News cube is a simple scraper application that scrapes the news (via the Chee
 
 ### What?! Not convinced? Queue in the video!
 
-[![VR News Info Cube](https://media.giphy.com/media/1dLj1grT2UIFRnBTkZ/giphy.gif){:height="898px" width="680px"}](https://nanovrnewscube.herokuapp.com/)
+[![VR News Info Cube|898 x 680](https://media.giphy.com/media/1dLj1grT2UIFRnBTkZ/giphy.gif)](https://nanovrnewscube.herokuapp.com/)
 
 ### Quick start guide
 
