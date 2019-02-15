@@ -1,6 +1,6 @@
 <h1>The Star Trek Clickster Game<h1>
 
-[![Star Trek Clickster](https://imagizer.imageshack.com/img921/914/BNSejx.jpg)](https://renovatio4ever.github.io/StarTrekClickster2/)
+[![Star Trek Clickster](https://imagizer.imageshack.com/img921/914/BNSejx.jpg)](https://startrekclickster.herokuapp.com/)
 
 <h2>Overview</h2>
 <ul>
@@ -16,7 +16,7 @@
 
 <h2>Interactive</h2>
 
-[![Star Trek Clickster](https://media.giphy.com/media/8UGoQrNQqFFne0uIrk/giphy.gif)](https://renovatio4ever.github.io/StarTrekClickster2/)
+[![Star Trek Clickster](https://media.giphy.com/media/8UGoQrNQqFFne0uIrk/giphy.gif)](https://startrekclickster.herokuapp.com/)
 
 <h2>About the Code</h2>
 <h4>Getting Started</h4>
