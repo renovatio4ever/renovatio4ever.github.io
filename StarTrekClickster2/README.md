@@ -16,7 +16,7 @@
 
 <h2>Interactive</h2>
 
-[![Star Trek Clickster](https://imagizer.imageshack.com/img922/6204/GB1kkl.gif)](https://renovatio4ever.github.io/StarTrekClickster2/)
+[![Star Trek Clickster](https://media.giphy.com/media/8UGoQrNQqFFne0uIrk/giphy.gif)](https://renovatio4ever.github.io/StarTrekClickster2/)
 
 <h2>About the Code</h2>
 <h4>Getting Started</h4>
