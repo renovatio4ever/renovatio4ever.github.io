@@ -1,6 +1,6 @@
 <h1>The Star Trek Clickster Game<h1>
 
-[![Star Trek Clickster](https://imagizer.imageshack.com/img921/914/BNSejx.jpg)](https://startrekclickster.herokuapp.com/)
+[![Star Trek Clickster](https://imagizer.imageshack.com/img924/4518/ctgf1A.jpg)](https://startrekclickster.herokuapp.com/)
 
 <h2>Overview</h2>
 <ul>
