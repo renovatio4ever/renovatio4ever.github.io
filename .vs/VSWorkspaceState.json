@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\FutureGame",
+    "\\GiphyAPI"
   ],
-  "SelectedNode": "\\D:\\MyProjectsGit\\renovatio4ever.github.io-v2",
+  "SelectedNode": "\\GiphyAPI\\index.html",
   "PreviewInSolutionExplorer": false
 }
