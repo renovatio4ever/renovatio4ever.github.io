@@ -1,0 +1,392 @@
+<!--Author: Peter Santiago
+Date: 11.05.2018
+Purpose: The Dream Team Game - Welcome Page
+Features: This code was built on JS, HTML, HTML5, CSS, CSS, Bootstrap, Firebase -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>Dream Team Game - Welcome</title>
+    <!-- Bootstrap Materialize Stack  -->
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="icon" type="image/ico" href="assets/images/american-football.png">
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+</head>
+
+<!-- MODAL FARM  -->
+<!-- Contains guidance prompts for user processing (i.e. existing, new user, reminders.)  -->
+<!-- MODAL: New User  -->
+
+<div id="mymodal-register" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="playerprompt">Welcome to The Dream Team</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>New to Dream Team Betting? Become a winner in 3 easy steps. 1. Select 3 teams. 2. Place your
+                    bets
+                    against the teams odds of winning, losing, or drawing from the following weeks game with
+                    your starter NFL tokens.
+                    3. Wait for the following weeks scores. If your teams wins, losses or draw changes - YOU'RE
+                    A WINNER. Top 5 winners
+                    are posted on the leader board. Good Luck!
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Let me play!</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: Existing User  -->
+<div id="mymodal-existing" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="playerprompt">Welcome back to The Dream Team Game</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Welcome back champ! Let's go check out your bets
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Let me play!</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: Bet on 3  -->
+<div id="mymodal-betmore" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="playerprompt">Welcome to The Dream Team Game</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>You need to bet on 3 teams!
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Let me play!</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: You went over  -->
+<div id="mymodal-youwentover" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="playerprompt">The Dream Team Game - Warning</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Dude! You only have 5000 Tokens to work with here. Let's keep it real. Need more tokens?
+                    Click here to purchase our NFL Token Pack starting at $0.99 for 15,000 Tokens
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Let me play!</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<body>
+    <!-- Sticky Header  -->
+    <nav class="navbar navbar-default navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" id="get-me-home-now" href="index.html">
+                <img src="assets/images/american-football.png" width="52" height="52" alt="">
+            </a>
+            <!-- <form class="form-inline">
+      <input class="form-control mr-sm-2" type="registration" placeholder="" aria-label="player_alias" value="testuser">
+      <button class="btn btn-primary my-2 my-sm-0 playnow">Play!</button>
+      </form> -->
+            <div class="user-login form-inline">
+                <!-- Drop down for football team News -->
+<span>
+        <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle nfllistbutton" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">NFL Team News
+                        </button>
+                        <div class="dropdown-menu nflist" aria-labelledby="dropdownMenuButton">
+                            <a class="AtlantaFalcons teams" href="#">Atlanta Falcons</a><br>
+                            <a class="BaltimoreRavens teams" href="#"> Baltimore Ravens</a><br>
+                            <a class="BuffaloBills teams" href="#"> Buffalo Bills</a><br>
+                            <a class="CarolinaPanthers teams" href="#"> Carolina Panthers</a><br>
+                            <a class="ChicagoBears teams" href="#"> Chicago Bears</a><br>
+                            <a class="CincinnatiBengals teams" href="#"> Cincinnati Bengals</a><br>
+                            <a class="ClevelandBrowns teams" href="#"> Cleveland Browns</a><br>
+                            <a class="DallasCowboys teams" href="#"> Dallas Cowboys</a><br>
+                            <a class="DenverBroncos teams" href="#"> Denver Broncos</a><br>
+                            <a class="DetroitLions teams" href="#"> Detroit Lions</a><br>
+                            <a class="GreenBayPackers teams" href="#">Green Bay Packers</a><br>
+                            <a class="HoustonTexans teams" href="#">Houston Texans</a><br>
+                            <a class="IndianapolisColts teams" href="#">Indianapolis Colts</a><br>
+                            <a class="JacksonvilleJaguars teams" href="#">Jacksonville Jaguars</a><br>
+                            <a class="KansasCityChiefs teams" href="#">Kansas City Chiefs</a><br>
+                            <a class="LosAngelesChargers teams" href="#">Los Angeles Chargers</a><br>
+                            <a class="LosAngelesRams teams" href="#">Los Angeles Rams</a><br>
+                            <a class="MiamiDolphins teams" href="#">Miami Dolphins</a><br>
+                            <a class="MinnesotaVikings teams" href="#">Minnesota Vikings</a><br>
+                            <a class="NewEnglandPatriots teams" href="#">New England Patriots</a><br>
+                            <a class="NewOrleansSaints teams" href="#">New Orleans Saints</a><br>
+                            <a class="NewYorkGiants teams" href="#">New York Giants</a><br>
+                            <a class="NewYorkJets teams" href="#">New York Jets</a><br>
+                            <a class="OaklandRaiders teams" href="#">Oakland Raiders</a><br>
+                            <a class="PhiladelphiaEagles teams" href="#">Philadelphia Eagles</a><br>
+                            <a class="PittsburghSteelers teams" href="#">Pittsburgh Steelers</a><br>
+                            <a class="SanFrancisco49ers teams" href="#">San Francisco 49ers</a><br>
+                            <a class="SeattleSeahawks teams" href="#">Seattle Seahawks</a><br>
+                            <a class="TampaBayBuccaneers teams" href="#">Tampa Bay Buccaneers</a><br>
+                            <a class="TennesseeTitans teams" href="#">Tennessee Titans</a><br>
+                            <a class="WashingtonRedskins teams" href="#">Washington Redskins</a>
+                        </div>
+                    </div>
+                </span>&nbsp;&nbsp;
+
+
+
+
+                <span class="bet-pot-tokens"><input class="form-control mr-sm-2 spongebob" type="registration"
+                        placeholder="" aria-label="player-alias" id="thesearenotthedroids" value="superplayer2018-A"></span>
+                <span class="bet-pot-amount"><button class="btn btn-primary my-2 my-sm-0 playitnow" id="go-bet-now">Play!</button></span>
+            </div>
+
+        </div>
+    </nav>
+
+    <body>
+
+        <!-- NFL Welcome/Splash Container. Visible on load, Invisible during bets  -->
+
+        <div class="nflb-welcome" id="hide-the-welcome">
+            <div class="jumbotron">
+                <h1 class="display-4">The Dream Team Game</h1>
+                <p class="lead">Online Weekly NFL Team Standing Betting.</p>
+                <hr class="my-4">
+                <p>Select 6 football teams, and place token bets on either win, lose or draw. Outcomes are determined
+                    weekly and
+                    rewards are alloted based on odds. Enter in your user ID to place your bets for the week. </p>
+                <p class="lead">
+                </p>
+                <span class="bet-pot-amount"><button class="btn btn-primary my-2 my-sm-0" id="go-to-champs">Leader
+                        Boards!</button></span>
+            </div>
+        </div>
+
+        <!-- TEAM-SELECTION  -->
+        <!--------------------->
+
+        <div class="nflb-team" id="hide-the-team">
+            <div class="jumbotron">
+                <div id="teamlonglist">
+                <div class="nflbets-stats">
+                    <span class="bet-header">Select 3 Teams</span>
+                    <div class="bet-pot">
+                        <span class="bet-pot-tokens">Earned NFL Tokens: </span>
+                        <span class="bet-pot-amount">5000</span>
+                    </div>
+                    
+                </div>
+                
+                <table id="previewteams" class="table table-hover table-sm">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Team</th>
+                            <th>Point Spread</th>
+                            <th>Odds</th>
+                            <th>Select</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody id="nflteams">
+
+                        <!-- Adding a maximum of 5 teams from API  -->
+
+
+                    </tbody>
+                
+                </table>
+            </div>
+                <button class="btn btn-primary my-2 my-sm-0" id="go-back-home-now">Back</button>
+                <button class="btn btn-primary my-2 my-sm-0" id="go-to-bet-board">Place Bets</button>
+                <!-- <button class="btn btn-primary my-2 my-sm-0 resetbets" type="submit">Back</button> -->
+                <p class="lead">
+                </p>
+                
+            </div>
+        </div>
+
+
+
+        <!--    TEAM-BETS    -->
+        <!--------------------->
+
+        <div class="nflb-bets" id="hide-the-bets">
+            <div class="jumbotron">
+                <div class="nflbets-stats">
+                    <span class="bet-header">Place Your Token Bets: Max 999 Per Team</span>
+                    <div class="bet-pot">
+                        <span class="bet-pot-tokens">NFL Tokens Earned: </span>
+                        <span class="bet-pot-amount" id="tokens-earned">5000</span>
+                    </div>
+                </div>
+                <table id="betting-board" class="table table-hover table-sm">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Team</th>
+                            <th>Prev Stats</th>
+                            <th>Wins</th>
+                            <th>Losses</th>
+                            <th>Draws</th>
+                            <th>Odds</th>
+                            <th>Earnings</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Patriots</td>
+                            <td>7-2-0</td>
+                            <td><input name="win[]" class="form-control col-xs-2 win bt" id="wins-1" value="0"></td>
+                            <td><input name="loss[]" class="form-control col-xs-2 loss bt" id="loss-1" value="0"></td>
+                            <td><input name="draw[]" class="form-control col-xs-2 draw bt" id="draw-1" value="0"></td>
+                            <td id="odds-1">4</td>
+                            <td id="earn-1">0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Chiefs</td>
+                            <td>8-1-0</td>
+                            <td><input name="win[]" class="form-control col-xs-2 win bt" id="wins-2" value="0"></td>
+                            <td><input name="loss[]" class="form-control col-xs-2 loss bt" id="loss-2" value="0"></td>
+                            <td><input name="draw[]" class="form-control col-xs-2 draw bt" id="draw-2" value="0"></td>
+                            <td id="odds-2">2</td>
+                            <td id="earn-2">0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Steelers</td>
+                            <td>6-2-1</td>
+                            <td><input name="win[]" class="form-control col-xs-2 win bt" id="wins-3" value="0"></td>
+                            <td><input name="loss[]" class="form-control col-xs-2 loss bt" id="loss-3" value="0"></td>
+                            <td><input name="draw[]" class="form-control col-xs-2 draw bt" id="draw-3" value="0"></td>
+                            <td id="odds-3">1</td>
+                            <td id="earn-3">0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Total Earnings</th>
+                            <td id="totalearnings">0</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="btn btn-primary my-2 my-sm-0" id="go-back-to-teams">Back</button>
+                <button class="btn btn-primary my-2 my-sm-0 place-bets" id="bet-this" type="submit">Lock In Bets</button>
+                <button class="btn btn-primary my-2 my-sm-0 reset-bets" id="reset-this" type="submit">Reset</button>
+                <p class="lead">
+                </p>
+            </div>
+        </div>
+
+
+        <!--    CHAMPION     -->
+        <!--------------------->
+
+        <div class="nflb-champs" id="hide-the-champs">
+            <div class="jumbotron">
+                <div class="nflbets-stats">
+                    <p class="lead">LEADER BOARDS</p>
+                    <p>Weekly Betting Champions</p>
+                </div>
+                <div id="tableBody">
+                <table id="tablePreview" class="table table-hover table-sm">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Player</th>
+                            <th>Total Earnings</th>
+                            <th>Total Tokens</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableChampion">
+
+                        <!-- Firebase inserts champions here -->
+                      
+                    </tbody>
+                </table>
+                </div>
+                <button class="btn btn-primary my-2 my-sm-0" id="go-to-home">Home</button>
+                <p class="lead">
+                </p>
+            </div>
+        </div>
+
+
+   <!-- NFL NEWSROOM    -->
+   <!--------------------->
+
+        <div class="nflb-news" id="hide-the-news">
+                <div class="jumbotron">
+                    <div class="nflbets-stats">
+                        <p class="lead">NFL NEWS ROOM</p>
+                    </div>
+                    <div id="tableNews">
+                    <table id="TheNews" class="table table-hover table-sm">
+                        <thead>
+                            <tr>
+                                <th>Latest Headlines</th>
+                            </tr>
+                        </thead>
+                        <tbody id="nflnewstable">
+    
+                            <!-- API will populate with latest news -->
+    
+                            
+                        </tbody>
+                    </table>
+                </div>
+                    <button class="btn btn-primary my-2 my-sm-0" id="close-the-news">Home</button>
+                    <p class="lead">
+                    </p>
+                </div>
+            </div>
+
+
+
+        <!-- Sticky Footer  -->
+        <footer class="footer">
+            <div class="container">
+                <span class="copyright-text">Dream Team Betting LLC &copy;2018</span>
+            </div>
+        </footer>
+
+        <!-- Script package-->
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js "></script>
+        <script src="assets/javascript/simplemask.js"></script>
+        <script src="assets/javascript/simplemask.min.js"></script>
+        <script src="assets/javascript/game.js"></script>
+        <script src="assets/javascript/gamesetup.js"></script>
+
+    </body>
+
+</html>

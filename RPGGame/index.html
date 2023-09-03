@@ -1,0 +1,175 @@
+<!-- Author: Peter Santiago
+Date: 10.13.2018
+Purpose: Simple Final Fantasy themed RPG game
+Features: This code was built on JS, HTML, HTML5, CSS, CSS3, and Bootstrap
+Note: The game is intended to by played with headphones or audio turned up. -->
+
+
+<!doctype html>
+<html lang="en">
+
+<!-- CSS and related bootstrap content -->
+
+<head>
+    <title>Final Fantasy RPG Card Game</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <!-- <link rel="stylesheet" href="assets/css/animate.css"> -->
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="icon" type="image/ico" href="assets/images/moogle.ico">
+</head>
+
+<!-- Body consisting of intro form, defender and opponent divs which will be cleverly shown or hidding on command -->
+
+<body>
+
+    <!-- Introduction bootstrap modal form -->
+
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Final Fantasy RPG Card Game</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+                </div>
+                <div class="modal-body">
+                    <p>Welcome! This game was designed applying a simple attack algorithm based on the selected
+                        characters 3 main attributes: Health Points (HP), and Attack Power (AP). The rules are simple: Pick a character
+                        and try to determine the best line up for your oppents to beat them ALL. Every character chosen should be 
+                        able to beat all the remaining apponents if selected in the correct order. Note: that the AP were intentionally
+                        hidden for discovery. The game features the application of HTML, HTML5, CSS, CSS3, Jquery, JavaScript, 
+                        Bootstrap, Sound, and Animation.</p>
+
+                    <p>The game was designed in the theme of Final Fantasy, my FAVORITE sci-fi turn based RPG of all
+                        time. The games long and wonderous history started in 1987 under the notion that if this game
+                        did not succeed the author would have folded shop ..permanently.. hence the word "Final" in the
+                        title Final Fantasy. Thanks to Nintendos (its first platform) aggressive marketing strategy,
+                        the game was huge success. From there many installations of the game were born, each iteration
+                        being significantly greater, deeper, and more involved than the last. To date over 70+ Final
+                        Fantasy games (including spin-offs) have been widely received by RPG players around the world.
+                    </p>
+
+                    <p>This card game is a tribute to the geniuses of Square Enix who continue to dazzle gamers world
+                        wide with the never ending story of good, and evil. Children of the light, followers of the
+                        Crystal. Enjoy!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Embedded youtube "Final Fantasy Crystal Theme" to create the ambiance while the game is idle - Thanks SQUARE ENIX! -->
+
+    <div id="TheLight">
+        <div id="TheCrystal" class="video-background">
+            <div id="TheCrystalInner" class="video-foreground">
+                <iframe src="https://youtube.com/embed/qYYTutAqVlk?start=40&end=221&autoplay=1&loop=1&controls=0&showinfo=0&autohide=1&rel=0&mute=1"
+                    frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contianer with intro title, instructions and card deck -->
+    <!-- zoomIn, bounceOut, and SlideInDown used here from large animation css array -->
+
+    <div id="firstScreen" class="container-fluid animated zoomIn bounceOut">
+        <img class="img-fluid" src="assets/images/ffrpg.png" alt="FF RPG Title logo" />
+        <br>
+        <br>
+        <h1>THE CARD RPG</h1>
+        <h2>Choose A Hero or Villan</h2>
+        <br>
+        <div id="game" class="ctr container card-deck">
+        </div>
+    </div>
+
+    <!-- Main screen containing game components (defender, opponent, scores...etc) -->
+
+    <div id="secondScreen" class="bg-trans container-fluid animated slideInDown">
+        <div class="row">
+            <div class="col-12 ctr">
+                Opponents remaining:
+                <br>
+                <div id="defendersLeftDiv"></div>
+            </div>
+        </div>
+        <div class="row text-center paddingTop">
+
+
+            <div class="col-5">
+                Player:
+                <br>
+                <div class="container" style="width: 30%;">
+                    <div id="playerDiv"></div>
+                    <div id="playerHealthDiv"></div>
+                </div>
+            </div>
+            <div class="col-2 paddingTop">
+
+                <!-- Transparent VS graphic between player and opponent -->
+
+                <img src="assets/images/vs.png" alt="versus" width="100" />
+            </div>
+
+
+            <div class="col-5">
+                Opponent:
+                <br>
+                <div class="container">
+                    <div id="defenderDiv"></div>
+                    <div id="defenderHealthDiv"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- The attack button -->
+
+        <div class="row">
+            <div class="col-12 btn">
+                <div id="msg"></div>
+                <br>
+                <button type="button" name="attack" id="attackBtn" class="btn btn-dark btn-lg">ATTACK!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Congratulations splash page with winning FX -->
+
+    <div class="container-fluid ">
+        <div id="globalMsg" class="animated fadeInUp">
+            <p class="shadow">
+                CONGRATULATIONS!
+                <br> The Light of The Crystal is Yours.
+                <br>
+                <a href="index.html"><button type="button" name="attack" id="playagnBtn" class="btn btn-dark btn-lg">Play
+                        Again</button></a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Static footer with shout out to my classroom buds -->
+
+    <footer>
+        Peter Santiago.
+        <a href="index.html"><img src="assets/images/chocobo.png" width="25px" alt="adorable chocobo" /></a> 2018
+        Shout out to classmates Swaroop Konreddy (Bg Video Inspiration ), and Anna Stein (Chocobos4Ever). Thanks
+        guys!
+    </footer>
+
+    <!-- JavaScript content -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js "></script>
+    <script src="assets/javascript/game.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+/* Author: Peter Santiago
+/* Date: 10.18.2018
+/* Purpose: Video Game Themed Trivia Game
+/* Content: Triva Game Style and Effects
+/* Update: 10.19.2018 Might just add the entire library to access all the cool effects.
+/* This library was borrowed from http://daneden.me/animate under the MIT 
+/* open source license: http://opensource.org/licenses/MIT Copyright (c) 2018 Daniel Eden
+*/
+
+/* Header content */
+
+.answerchoice {
+	border: 1px solid black;
+  border-radius: 5%;
+	width: 40%;
+	color: black;
+  text-align: center;
+  margin: 10px auto;
+  font-size: 20px;
+  background-color: white;
+
+}
+
+img {
+  max-height: 250px;
+  width: auto;
+}
+
+#answerblock {
+  text-align: center;
+
+}
+
+#questionblock {
+  text-align: center;
+  font-weight: bold;
+}
+
+#reset {
+  visibility: visible;
+}
+
+body {
+  background-image: url("../images/readyplayerone.jpg");
+  background-size: cover;
+  font-family: 'Karla', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-weight: bolder;
+  padding: 20px;
+  font-size: 45px;
+  text-shadow: 0 0 2px black, -1px -1px 2px black, 1px 0 2px black, 1px 1px 2px black;
+}
+
+p {
+  margin: 10px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+}
+
+h2, h4 {
+  margin: 30px;
+  font-weight: bold;
+}
+
+.wrapper {
+  margin: 10px auto;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 2px solid #403fd3;
+  height: 500px;
+  width: 60%;
+  text-align: center;
+}
+
+.btn {
+  position: relative;
+  bottom: -150px;
+}
+
+/* Modal Content with a little bit of stretchiness (reactive) */
+
+.modal-body {
+  color: black;
+  max-height: calc(100vh - 210px);
+  overflow-y: auto;
+}
+
+.modal-header {
+  color: #fff;
+  padding: 9px 15px;
+  border-bottom: 1px solid #eee;
+  background-color: #2d689e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* You tube embed. Yeah - iframe for this to achieve that maximum display coverage */
+
+* {
+    box-sizing: border-box;
+}
+
+.video-background {
+    background: #000;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -99;
+}
+
+.video-foreground,
+.video-background iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+#vidtop-content {
+    top: 0;
+    color: #fff;
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .video-foreground {
+        height: 300%;
+        top: -100%;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .video-foreground {
+        width: 300%;
+        left: -100%;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .vid-info {
+        width: 50%;
+        padding: .5rem;
+    }
+
+    .vid-info h1 {
+        margin-bottom: .2rem;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .vid-info .acronym {
+        display: none;
+    }
+}

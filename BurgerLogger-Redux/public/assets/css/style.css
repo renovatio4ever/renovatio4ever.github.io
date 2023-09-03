@@ -1,0 +1,107 @@
+body {
+	background-color: #390d57;
+	font-family: 'Coiny', cursive;
+	font-style: normal;
+    font-weight: 700;
+}
+
+#eat {
+	text-align: center;
+	color: black;
+	background-color: white;
+}
+
+.title {
+	color: white;
+	margin-bottom: 15px;
+	text-align: center;
+	text-indent: 7px;
+}
+
+#burger {
+	margin-left: 250px;
+	margin-top: 0;
+}
+
+#container {
+	background-image: url("../img/burgerwall.jpg");
+	align-items: center;
+	width: 1170px;
+}
+
+#header {
+	width: 1000px;
+	margin-left: 62px;
+	padding: 0px;
+	margin-top: 15px;
+	background-color: white;
+	
+}
+
+#yum {
+	margin-left: 65px;
+	margin-right: 230px;
+	margin-top: 40px;
+}
+
+#devoured {
+	margin-top: 45px;
+}
+
+#line {
+	width: 1000px;
+}
+
+#box {
+	height: 50px;
+	width: 800px;
+	margin-left: 150px;
+}
+
+#order {
+	margin-left: 150px;
+	height: 50px;
+	width: 155px;
+	color: white;
+	background-color: #a70e12;
+}
+
+#valhalla {
+	text-align: center;
+	color: white;
+}
+
+h3 {
+	text-align: left;
+	color: white;
+}
+
+.giphy-embed {
+	margin-left: 480px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#button {
+	color: white;
+	background-color: #a70e12;
+	margin-left: 0px;
+	height: 50px;
+	width: 155px;
+}
+
+/* #burger-form {
+	display:inline-block;
+	position:relative;
+  } */
+
+  .footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: rgb(2, 1, 1);
+	color: rgb(202, 222, 255);
+	text-align: left;
+	font-size: 20px;
+ }

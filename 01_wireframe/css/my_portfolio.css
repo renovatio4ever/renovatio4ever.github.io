@@ -1,0 +1,55 @@
+/**
+ * First HTML Assignment Portfolio CSS-File
+ * Order: 2 (index, portfolio, contact form)
+ * Auth: Peter Santiago
+ * Last Updated: 09.18.2018
+ **/
+
+ /* image table parameters */
+
+.tg {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.tg td {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    padding: 5px 5px;
+    border-style: none;
+    border-width: 1px;
+    overflow: hidden;
+    word-break: normal;
+    border-color: black;
+    padding-right: 10px;
+}
+
+.tg th {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 5px 5px;
+    border-style: none;
+    border-width: 1px;
+    overflow: hidden;
+    word-break: normal;
+    border-color: black;
+}
+
+.tg .tg-0pky {
+    border-color: inherit;
+    text-align: left;
+    vertical-align: top
+}
+
+/* parameters for portfolio image */
+
+img {
+    float: left;
+    margin:3px 3px 3px 3px ;
+    border: 5px solid white;
+    border-radius: 2px;
+    padding: 5px 5px 5px 5px;
+    width: 220px;
+    height: 166px;
+  }

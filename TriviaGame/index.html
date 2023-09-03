@@ -1,0 +1,73 @@
+<!-- Author: Peter Santiago
+Date: 10.18.2018
+Purpose: Video Game Themed Trivia Game
+Features: This code was built on JS, HTML, HTML5, CSS, CSS3, and Bootstrap
+Note: The game is intended to by played with headphones and the audio turned up. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Video Game History Trivia</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/javascript/app.js"></script>
+</head>
+<body>
+
+
+    <!-- Introduction bootstrap modal form -->
+
+    <div id="myModal" class="modal fade">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Video Game Trivia</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	
+					</div>
+					<div class="modal-body">
+						<p>Welcome! This is a simple trivia game based on the Ready Player One them set. The rules are simple: Pick
+							the correct answer within the time provided. The answer will be provided if the time expires. Be warned however, 
+							answered and unanswered questions will be tallied. Object of the game is to try to get them all answered correctly
+							The game features the application of HTML, HTML5, CSS, Jquery, JavaScript, 
+							Bootstrap, Sound, and gif animation. Click on the x icon to the upper right close these instructions. 
+							Remember to turn up the volume, and Good Luck Player!</p>
+					</div>
+					<div class="modal-footer">
+					
+					</div>
+				</div>
+			</div>
+		</div>
+
+<!-- Trivia Game Content -->
+
+<!-- Couldn't resist adding some animation to the game -->
+
+<div id="TheOnePlayer">
+        <div id="TheFirstQuarter" class="video-background">
+            <div id="GoingBackwards" class="video-foreground">
+                <iframe src="https://youtube.com/embed/PlpgcoR7kYk?autoplay=1&loop=1&controls=0&showinfo=0&autohide=1&rel=0&mute=1" 
+                    frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!--https://youtube.com/embed/PlpgcoR7kYk?autoplay=1&loop=1&controls=0&showinfo=0&autohide=1&rel=0&mute=1" -->
+
+<h1>Video Game History Trivia</h1>
+<div class="wrapper">	
+  	<div id= "timeleft"></div>
+	<div id= "questionblock"></div>
+	<div id= "answerblock"></div>
+	<button class ="btn btn-success" id ="start">Let The Adventure Begin</button><br>
+	<button class="btn btn-success" id="reset">Insert Another Quarter to Play Again!</button>
+</div>
+</body>
+</html>

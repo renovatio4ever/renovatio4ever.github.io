@@ -1,0 +1,131 @@
+/* Author: The Dream Team (Peter Santiago, Brenton Wyman, Ruben Galleguillos)
+Date: 11.01.2018
+Purpose: Fantasy Football/Craps Betting Themed Game
+Features: This code was built on JS, HTML, HTML5, CSS, CSS3, and Foundation */
+
+body {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: 1920px 1200px;
+  background-color: #eeeeee;
+  background-image: url("../images/NFLSplashOla.jpg");
+}
+
+.navbar-default {
+  background-color: #013369;
+  border-color: #E7E7E7;
+}
+
+#wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 206px;
+  /* footer height, we will fix that with jquery */
+}
+
+body>.container {
+  padding: 60px 15px 0;
+}
+
+code {
+  font-size: 80%;
+}
+
+.footer {
+  position: absolute;
+  text-decoration-color: white;
+  color: white;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px;
+  /* Vertically center the text there */
+  background-color: #013369;
+}
+
+.copyright-text {
+  color: white;
+}
+
+.nflb-welcome,
+.nflb-bets,
+.nflb-team,
+.nflb-champs,
+.nflb-news {
+  width: 800px;
+  height: 400px;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+
+  max-width: 100%;
+  max-height: 100%;
+
+}
+
+#odds-1,
+#odds-2,
+#odds-3,
+#odds-4,
+#odds-5,
+#odds-6 {
+  font-weight: bold;
+  color: rgb(73, 35, 143);
+}
+
+#earn-1,
+#earn-2,
+#earn-3,
+#earn-4,
+#earn-5,
+#earn-6 {
+  font-weight: bold;
+  color: rgb(150, 69, 69);
+}
+
+.nflbets-stats .bet-header {
+  float: left;
+}
+
+.bet-pot {
+  float: right;
+}
+
+.user-login {
+  float: right;
+}
+
+.bet-pot .bet-pot-tokens {
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(29, 52, 95);
+}
+
+.bet-pot .bet-pot-amount {
+  font-size: 22px;
+  font-weight: bold;
+  color: rgb(133, 28, 124);
+}
+
+.teams {
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+#tableBody,
+#tablePreview,
+#tableNews,
+#teamlonglist {
+  height: 200px;
+  overflow: auto;
+}

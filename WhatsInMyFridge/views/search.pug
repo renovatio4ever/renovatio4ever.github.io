@@ -1,0 +1,37 @@
+extends layout
+
+block content
+    .card.horizontal
+        .card-image
+            img(src= wine.image)
+        .card-stacked
+            .card-content
+                span.card-title.grey-text.text-darken-4= wine.name
+            .card-action
+                p Purchase for 
+                    a(href= wine.link)= wine.price
+            
+    div(style="display: flex; flex-flow: row wrap; justify-content: center;")
+        for item in results
+            - var recipeID= item.recipe.uri.split("_")
+            .card(style="width: 20rem; margin: 1rem;")
+                .card-image.waves-effect.waves-block.waves-light
+                    img.activator(src= item.recipe.image)
+                .card-content
+                    span.card-title.activator.grey-text.text-darken-4= item.recipe.label
+                        i.material-icons.right more_vert
+                    button.btn.light-blue.lighten-1(data-recipeID= recipeID[recipeID.length - 1])
+                        i.material-icons star
+                .card-reveal
+                    span.card-title.grey-text.text-darken-4= item.recipe.label
+                        i.material-icons.right close
+                    ul
+                        for ingredient in item.recipe.ingredientLines
+                            li= ingredient
+                    p
+                        | Find the recipe at 
+                        a(href=item.recipe.url)= item.recipe.source
+        else
+            h1 No recipes found!
+
+//- block scripts

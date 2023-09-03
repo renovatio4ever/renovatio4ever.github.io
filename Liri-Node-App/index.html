@@ -1,0 +1,177 @@
+<!-- Author: Peter Santiago
+Date: 12.01.2018
+Purpose: Node JS Liri Bot
+Features: This code was built on JS, HTML, HTML5, CSS, NodeJS and Bootstrap -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Liri-Bot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- link to stylesheet and uikit -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.10/css/uikit.min.css">
+
+</head>
+
+<body>
+    <br>
+    <h1 id="head1">NODE JS LIRI BOT</h1>
+    <br>
+    <div id="uk-cont-lg" class="uk-section uk-section-primary uk-light">
+        <div id="uk-cont-sm" class="uk-container">
+
+            <h3 id="head2">Online User Guide</h3>
+
+            <div class="uk-grid-large uk-child-width-medium" uk-grid>
+                <div>
+                </div>
+                <div>
+                    <hr class="uk-divider-icon">
+                    <p id="p1">Welcome to the Node JS Liri Bot. This is a simple Node JS solution that process user
+                        inputs and provides responses based on a preselected list of functions. The following is a list of instructions to install, configure and run the Liri Bot.</p>
+                    <p><a href="https://github.com/renovatio4ever/renovatio4ever.github.io/tree/master/Liri-Node-App"> Github: Node JS Liri Bot  </a></p>
+                        <p><img src="./assets/images//myliriproject.gif"></p>
+                    
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- instructions to using the program  -->
+    <div class="uk-section uk-section-secondary uk-light">
+        <div class="uk-container" id="area2">
+
+            <h3 id="head3">Implmentation Guide</h3>
+
+            <div class="uk-grid-medium uk-child-width-small" uk-grid>
+                <div></div>
+                <div uk-parallax="opacity: 0,17">
+                    <hr class="uk-divider-icon">
+                    <ul>
+                        <p>Step 1: Install Node JS</p>
+                        <li>Visit node.js and down load the latest build</li>
+                        <li><a href="https://nodejs.org/en/">https://nodejs.org/en/</a></li>
+                        <p></p>
+                        <img src="./assets/images/howto_nodejs.jpg">
+                    </ul>
+                    &nbsp;
+                    <ul>
+                        <p>Step 2: Launch the IDE</p>
+                        <li>After downloading and installing Node JS, Open a terminal session</li>
+                        <p></p>
+                        <img src="./assets/images/howto_terminal.jpg">
+                    </ul>
+                    &nbsp;
+                    <ul>
+                        <p>Step 3: Clone/Copy the repository</p>
+                        <li>Visit <a href="https://github.com/renovatio4ever/renovatio4ever.github.io/tree/master/Liri-Node-App">my Liri-Node-App repository</a> and copy the contents to your IDE</li>
+                        <p></p>
+                        <img src="./assets/images/howto_clone.jpg">
+                        &nbsp;
+                    </ul>
+                    &nbsp;
+                    <ul>
+                        <p>Step 4: Obtain Spotify Key</p>
+                        <li>You will need to register and obtain both a client and secret key. Create a .env file in
+                            the
+                            project and add your client, and secret key to the file.</li>
+                            <p></p>
+                        <img src="./assets/images/howto_spotify.jpg">
+                    </ul>
+                    &nbsp;
+                    <ul>
+
+                        <p>Step 5: Obtaining NPM Packages</p>
+                        <li>The solution relies on a few node management packages (NPM) packages for functionality.
+                            These packages can be obtain from NPM along with guides on how to use each. For this
+                            project, only an installation is required.</li>
+                            <p></p>
+                        <img src="./assets/images/howto_npmload.jpg">
+                    </ul>
+                    &nbsp;
+
+                    <ul>
+                        <p>Step 6: Installing the require NPM Packages</p>
+                        <li>The solution relies on a few npm packages for functionality. In the terminal install the
+                            following packages</li>
+                            <p></p>
+                        <img src="./assets/images/howto_npminstall.jpg">
+                    </ul>
+                    &nbsp;
+                    <ul>
+                        <p>The following npm are api's to the required data source for Band Concerts, Spotify Music,
+                            and Movies</p>
+                        <li>npm install bandsintown</li>
+                        <li>npm install node-spotifiy-api</li>
+                        <li>npm install omdb</li>
+                        &nbsp;
+                        <p>The following npm are required for user requests, and the passing of secret keys to Spotify</p>
+                        <li>npm install axios</li>
+                        <li>npm install dotenv</li>
+                        &nbsp;
+                        <p>The following npm are required for the solution to write to a log file, date and time, and
+                            accept user and system commands</p>
+                        <li>npm install fs</li>
+                        <li>npm install moment</li>
+                        <li>npm install node-cmd</li>
+                        &nbsp;
+                        <p>The following npm packages are for cosmetic affects including color and large ascii text</p>
+                        <li>npm install chalk</li>
+                        <li>npm install figlet</li>
+                        <p></p>
+                        <img src="./assets/images/howto_npmpack.jpg">
+                    </ul>
+
+                    &nbsp;
+
+                    <ul>
+                        <p>Step 7: Run the Liri Bot</p>
+                        <p>The following commands are available for the liri bot</p>
+                        <li>"node liri.js help <i>Presents solutions how-to</i>"</li>
+                        <li>"node liri.js concert-this <i>name of band</i>"</li>
+                        <li>"node liri.js spotify-this-song <i>Presents solutions how-to</i>"</li>
+                        <li>"node liri.js movie-this <i>name of movie</i>"</li>
+                        <li>"node liri.js do-what-it-says"</li>
+                        <p></p>
+                        <img src="./assets/images/howto_useliri.jpg">
+                    </ul>
+                    &nbsp;
+                    <hr class="uk-divider-icon">
+                    <ul>
+                        <p>Releases</p>
+                        <li>1.0.0: Proof of concept. Accept user commands</li>
+                        <li>1.0.1: Spotify, OMDB, and Concert NPM Api Integration</li>
+                        <li>2.0.0: Chalk and Figlet NPM integration</li>
+                    </ul>
+                    &nbsp;
+                    <hr class="uk-divider-icon">
+                    <ul>
+                        <p>Road Map</p>
+                        <li>3.0.0: Improved error management</li>
+                    </ul>
+                    &nbsp;
+
+                </div>
+                <div></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+    <p>Peter Santiago 2018 &copy;</p>
+    </div>
+          
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.10/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.10/js/uikit-icons.min.js"></script>
+</body>
+
+</html>
