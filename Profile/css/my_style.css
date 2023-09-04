@@ -24,12 +24,12 @@ p {
 /* body container */
 
 body {
-  background-image: url('http://i65.tinypic.com/v6ivrm.png');
-  background-repeat: repeat;
-  background-color: #fff;
-  height: 50px;
-  text-decoration-color: #777777;
-  font-family: Arial, Helvetica, sans-serif;
+    background-image: url('https://imagizer.imageshack.com/v2/150x100q70/922/brCguT.jpg');
+    background-repeat: repeat;
+    background-color: #fff;
+    height: 50px;
+    text-decoration-color: #777777;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .blended_grid {
