@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-renovatio4ever.github",
+      "appliesTo": "/",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-renovatio4ever.github",
+      "appliesTo": "/",
+      "type": "launch"
+    }
+  ]
+}
